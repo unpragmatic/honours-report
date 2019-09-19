@@ -1,0 +1,7 @@
+#!/bin/sh
+
+inotifywait -e modify -r -m src |
+    while read path action file; do
+        make
+        #xdotool search --onlyvisible --class 'Brave-browser' windowactivate --sync key --clearmodifiers --window 0 key F5
+    done
