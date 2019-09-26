@@ -10,19 +10,40 @@ in figure \ref{fig:grammar}. The simplicity of the language makes it
 interesting from a research perspective. It limits the space of possible
 optimisations and is also far detracted from actual bare metal instructions.
 
-\begin{figure}[htb]
+
+
+
+
+todo make numbers work in a flat hierachy  (i.e. do no preprocess)
+\begin{figure}[htb]       
     \centering
     \begin{grammar}
-    <statement> ::= <ident> ‘=’ <expr>
-        \alt ‘for’ <ident> ‘=’ <expr> ‘to’ <expr> ‘do’ <statement>
-        \alt ‘{’ <stat-list> ‘}’
-        \alt <empty>
-        
-    <stat-list> ::= <statement> ‘;’ <stat-list> | <statement>
-    \end{grammar}
+    <program> ::= { <term> }
+
+    <abstraction> ::= '(' <term> ')'
+
+    <term> ::= <abstraction>
+        \alt 'apply'
+        \alt 'left'
+        \alt 'right'
+        \alt 'copy'
+        \alt 'drop'
+    
+      \end{grammar}
     \caption{}
     \label{fig:grammar}
 \end{figure}
+
+
+Could design an interpreter that uses stack until a value is requested. When a
+value is requested then left reduce could be used.
+
+Combine the tree encoding technology with the stack execution technology.in
+
+Arity analysis would played with but not tangible results were found.
+
+Future work could also include adding a JIT compiler to the left reduce based version.z
+
 
 \begin{figure}
     \centering
