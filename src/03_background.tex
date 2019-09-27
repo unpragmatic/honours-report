@@ -6,15 +6,18 @@ one of five operators or an abstraction: a sequence of Kihi terms
 captured by parenthesis. 
 
 The complete grammar for the language is given
-in figure \ref{fig:grammar}. The simplicity of the language makes it
-interesting from a research perspective. It limits the space of possible
+in figure \ref{fig:grammar}. The semantics of the language make it
+interesting from a research perspective. The limited expressiveness of
+the language prevents the common approach to optimisation where expressive
+abstractions can be compiled to efficient machine code. [cite static
+dispatch optimisation]. Furthermore, the abstractions/semantics of Kihi are
+also far disjoined from bare metal. This incurs the additional overhead of
+mapping Kihi to machine instructions.
+
+It limits the space of possible
 optimisations and is also far detracted from actual bare metal instructions.
 
 
-
-
-
-todo make numbers work in a flat hierachy  (i.e. do no preprocess)
 \begin{figure}[htb]       
     \centering
     \begin{grammar}
@@ -34,15 +37,6 @@ todo make numbers work in a flat hierachy  (i.e. do no preprocess)
     \label{fig:grammar}
 \end{figure}
 
-
-Could design an interpreter that uses stack until a value is requested. When a
-value is requested then left reduce could be used.
-
-Combine the tree encoding technology with the stack execution technology.in
-
-Arity analysis would played with but not tangible results were found.
-
-Future work could also include adding a JIT compiler to the left reduce based version.z
 
 
 \begin{figure}
@@ -81,7 +75,19 @@ to occur anywhere in the program because a reducible term may
 be found anywhere in the program and this reduction can be
 thought of as an execution step.
 
+The operational semantics for a term rewriting based execution of
+Kihi is shown is figure \ref{fig:term_rewriting_op_sem}.
+
+\input{figures/04_implementation/term_rewriting_op_sem.tex}
+\input{figures/04_implementation/stack_op_sem.tex}
+
+
 \subsubsection{Stack Based}
+Stack based execution is a model of execution where each term
+has a specfic effect on a global stack. The terms are typically
+either processed in a right to left order or vice versa. This
+restricts execution to the rightmost or leftmost term. Furthermore,
+the use of stack restricts the arguments accessible to each term.
 Stack based execution imagines the terms of the program as
 instructions for a stack machine. The terms are scanned
 right to left and an action performed depending on the term
@@ -90,11 +96,30 @@ it is pushed onto the stack and whenever a drop is found the
 topmost value of the stack is popped and discarded.
 
 \subsubsection{Differences}
+The most fundamental difference these methods of execution is
+revealed when term rewriting is broken down into two fundamental steps.
+
+1. Seek
+    - Find the term to execute
+2. Execution
+    - Execute that term
+
+In contrast, stack based methods do not involve a seek phase. This
+can significantly improve performance, but also shows that stack
+based systems are a subset of term rewriting based systems. In fact,
+a term rewriting based system seeking from right to left is usually 
+equivilent to a stack based system when the program. The edgecase
+being when the program being executed contains barriers. In this case,
+term rewriting based systems are able to find executable portions
+beyond the barrier.
+
 A term rewriting based virtual machine will be able to execute
 all programs a stack based machine is able to. The proof of this
 is relatively simple. One can imagine a term rewriting machine 
 that searches for reducible terms right to left as equivilent to
 a stack machine for terminating programs.
+
+
 
 A program representing an infinite data structure, such as the count
 program which outputs a continous stream of numbers, cannot be

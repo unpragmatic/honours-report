@@ -1,63 +1,23 @@
 \chapter{Implementation} \label{C:implementation} 
 
+This paper is about an implementation of Kihi virtual machine
+in Rust. This language was chosen for its support for low
+level programming but also because it provides guarantees about
+memory safety and expressive high level abstractions.
+
+\section{Language Choice}
+
+\section{Optimisation}
+There were two primary optimisations implemented in the Kihi virtual
+machine. Firstly, symbolic analysis: finding commonly occuring or
+meaningful sequences of terms, and secondly symbol optimisation: the
+process of dynamicly constructing a more efficient method of executing
+a symbol. 
+
+\subsection{Symbolic Analysis}
+[Find reference probably simmilar idea exists in lit ]
+The Kihi virtual machine implements a relatively simple symbol analyser.
+The base symbolic analyser combines adjacent operators into symbols. The
+motivation behind this method
+
 \section{Execution Style}
-There are two main execution styles that can be used to execute
-a Kihi program: a term rewriting approach and a stack based 
-approach. These two approachs are identical for side-effect
-free and terminating programs, however, the observed
-behaviour for other varieties of programs can differ
-substantially depending on the execution style. The rest of 
-this section describes these two execution styles and 
-concludes by contrasting their behaviour.
-
-\subsubsection{Term Rewriting}
-Term rewriting is the process of finding
-and replacing reducible terms with their reduced form. For Kihi,
-this means finding terms which are directly followed by
-some number of abstractions. The specific number of abstractions
-required is determined by the term and can be thought of as the
-number of arguments. This execution paradigm allows execution
-to occur anywhere in the program because a reducible term may
-be found anywhere in the program and this reduction can be
-thought of as an execution step.
-
-\subsubsection{Stack Based}
-Stack based execution imagines the terms of the program as
-instructions for a stack machine. The terms are scanned
-right to left and an action performed depending on the term
-encountered. For instance, whenever an abstraction is found
-it is pushed onto the stack and whenever a drop is found the
-topmost value of the stack is popped and discarded.
-
-\subsubsection{Differences}
-A term rewriting based virtual machine will be able to execute
-all programs a stack based machine is able to. The proof of this
-is relatively simple. One can imagine a term rewriting machine 
-that searches for reducible terms right to left as equivilent to
-a stack machine for terminating programs.
-
-A program representing an infinite data structure, such as the count
-program which outputs a continous stream of numbers, cannot be
-processed through a normal stack based approach. There may be alterations
-to the stack based approach which may allow values to be pushed 
-through to the left hand side of the program.
-
-
-an abstraction is
-encountered it is pushed onto the stack and when a term (reword)
-is found the arguments are popped off the stack and the 
-result, if it is an abstraction, is pushed onto the stack.
-
-The first approach involves finding and replacing
-reducible terms with their reduced form. The essence of this
-execution style is shown in figure 
-\ref{fig:term_rewriting_pseudocode} which provides a pseudocode
-description of the essential algorithm.
-
-These two different approaches are identical for
-terminating programs but can display very different behaviour
-for non-terminating programs.
-Any acknowledgments should go 
-in here, between the title page and the table of contents.  The 
-acknowledgments do not form a proper chapter, and so don't get a 
-number or appear in the table of contents.

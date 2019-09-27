@@ -1,0 +1,51 @@
+\begin{figure}[htb]
+    \centering
+    \begin{frame}{}
+    \infax{
+        Programs = \{ \langle t_n \mid t \in Terms \rangle \}
+    }
+
+    \infax{
+        Abstractions = \{ (p) \mid p \in Programs \}
+    }
+
+    \infax{
+        Terms = \{\mbox{apply}, \mbox{left}, \mbox{right}, \mbox{copy}, \mbox{drop} \}
+        \cup Abstractions \\
+    }
+
+    \infrule[Apply]
+        {t \in Abstractions \andalso t = (p)}
+        {\kihi{ \mbox{apply} : t } \leadsto p}
+
+    \infrule[Left]
+        {t_1, t_2 \in Abstractions \andalso t_1 = (p_1)}
+        {
+            \kihi{ \mbox{left} : t_1 : t_2 }
+            \leadsto 
+            \kihi{ t_2 : p1 }
+        }
+
+    \infrule[Right]
+        {t_1, t_2 \in Abstractions \andalso t_1 = (p_1) \andalso t_2 = (p_2)}
+        {
+            \kihi{ \mbox{right} : t_1 : t_2 }
+            \leadsto 
+            \kihi{ p_1 : t_2 }
+        }
+
+    \infrule[Copy]
+        {t \in Abstractions}
+        {\kihi{ \mbox{copy} : t } \leadsto \kihi{ t : t }}
+
+    \infrule[Drop]
+        {t_2 = (p_1)}
+        {\langle \mbox{drop} : t_2 \rangle \leadsto \emptyset}
+
+    \infrule[Term Rewriting]
+        {p_1 \leadsto p_2}
+        {\langle p : p_1 : p' \rangle \leadsto p : p_2 : p'}
+    \end{frame}
+    \caption{Term rewriting operational semantics for Kihi}
+    \label{fig:term_rewriting_op_sem}
+\end{figure}
