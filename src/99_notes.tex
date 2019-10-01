@@ -15,3 +15,9 @@ Future work could also include adding a JIT compiler to the left reduce based ve
 
 Mixture of stack based execution and reduction.
 Use seek to find a spot to stack execute from.
+
+Add symbolic execution to the stack model.
+
+Perfor multi pass optimisation of symbols.
+
+Combine symbols that can be combined. i.e. s1 :: 2 arg -> 0 , s2 :: 0 arg -> 1 arg => s1 s2 :: 1 arg -> 0

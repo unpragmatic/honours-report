@@ -1,0 +1,23 @@
+\chapter{Implementation} \label{C:implementation} 
+
+This paper is about an implementation of Kihi virtual machine
+in Rust. This language was chosen for its support for low
+level programming but also because it provides guarantees about
+memory safety and expressive high level abstractions.
+
+\section{Language Choice}
+
+\section{Optimisation}
+There were two primary optimisations implemented in the Kihi virtual
+machine. Firstly, symbolic analysis: finding commonly occuring or
+meaningful sequences of terms, and secondly symbol optimisation: the
+process of dynamicly constructing a more efficient method of executing
+a symbol. 
+
+\subsection{Symbolic Analysis}
+[Find reference probably simmilar idea exists in lit ]
+The Kihi virtual machine implements a relatively simple symbol analyser.
+The base symbolic analyser combines adjacent operators into symbols. The
+motivation behind this method
+
+\section{Execution Style}
