@@ -1,8 +1,19 @@
 \chapter{Introduction} \label{C:intro}
 One of the principal concerns of programming language designers
-and implementors is speed. This paper addresses those concerns
-in the context of Kihi: a minimal functional, compositive,
-and concatenative language. 
+and implementers is speed. This paper addresses those concerns
+in the context of Kihi: a minimal functional, compositional,
+and concatenative language. Specifically, this paper outlines
+an performance focused implementation of the Kihi language in
+Rust. The aforementioned properties of Kihi make it an interesting
+optimisation subject. They are rarely found in mainstream languages,
+although recently functional concepts have become much more widespread.
+The details of these properties are provided in the background
+section of the report.
+
+In addition, the operational semantics of the language do not
+resemble actual bare metal instructions.
+
+
 
 These qualities make it an 
 interesting subject for optimisation, in particular, the large

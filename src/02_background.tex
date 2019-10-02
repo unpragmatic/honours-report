@@ -1,15 +1,50 @@
 \chapter{Background} \label{C:background} 
+There are numerous concepts that surround Kihi.
+This chapter hopes to provide all the background
+necessary for an undergraduate software engineer
+to understand and appreciate the rest of the paper.
+This section begins with a brief explanation of 
+functional, concatenative, and compositional
+programming paradigms.
+
+\section{Functional Languages}
+Functional programming languages are defined by their use
+of function evaluation as the primary means of computation.
+This stands in contrast to imperative programming languages,
+such as Java, which compute by executing a series of 
+statements. The distinguishing factor being that statements
+are capable of manipulating state whereas functions,
+in a functional context, cannot.
+In that sense, functional functions are similar to imperative
+expressions than imperative functions since they can potentially
+modify the state of the program.
 
 
+Functional languages understand execution as the evaluation
+expressions. This is in contrast to imperative languages
+which represents execution as the evaluation of statements.
+The key difference being that statements can potentially
+modify state that is not local to the statement. 
+Figure \ref{fig:imperative_example} showcases an example
+of this. In contrast, an expression cannot manipulate any
+state. Instead, new values must be created whenever a
+different value is desired.
 
-\subsection{Functional Languages}
+\todo[inline]{This paragraph can provide an example of a
+functional program. In particular reference the performance
+of the Haskell book: "Central to functional programming is the
+idea of a function, which computes a result that depends
+on the value of its inputs}
 
-\subsection{Concatenative and compositional languages}
+\input{figures/02_background/imperative_example.tex}
+
+\input{figures/02_background/functional_example.tex}
+
+\section{Concatenative and compositional languages}
 These two terms are often used to refer to similar concepts. However,
-there is a slight distinction.
-
-A concatenative language is one where the source code of two
-programs can be concatenated together into a meaningful program.
+there is a slight distinction. A concatenative language is one
+where the source code of two programs can be concatenated together
+into a meaningful program.
 
 A compositional language is one where the default mode of operation
 is the composition of functions. For instance,...
@@ -26,9 +61,9 @@ almost always also compositional.
 While, concatenative languages are often compositional 
 
 
-\subsection{Kihi Grammar}
+\section{Kihi Grammar}
 
-\subsection{Kihi Evaluation Methods}
+\section{Kihi Evaluation Methods}
 
 \subsection{Kihi Operational Semantics}
 
