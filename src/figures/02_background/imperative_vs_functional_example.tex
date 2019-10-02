@@ -1,0 +1,24 @@
+\begin{figure}[htb]
+    \centering
+    \begin{lstlisting}[language=Java]
+public class Main {
+    public static int imperative_sum(List<Integer> xs) {
+        int sum = 0;
+        for (int x : xs) {
+            sum += x;
+        }
+        return sum;
+    }
+
+    public static int functional_sum(List<Integer> xs) {
+        if (xs.isEmpty()) {
+            return 0;
+        }
+
+        return xs[0] + functional_sum(xs.sublist(1, xs.size()));
+    }
+}
+\end{lstlisting}
+    \caption{Two ways of finding the sum of a list.}
+    \label{fig:imperative_vs_functional_example}
+\end{figure}

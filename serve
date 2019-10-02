@@ -1,8 +1,8 @@
 #!/bin/sh
 mkdir -p target
-codium .
+#codium .
 make
-okular target/main.pdf &
+#okular target/main.pdf &
 
 inotifywait -e modify -r -m src |
     while read path action file; do

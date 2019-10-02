@@ -1,5 +1,7 @@
 \chapter{Background} \label{C:background} 
-There are numerous concepts that surround Kihi.
+There are numerous concepts that surround Kihi that are
+worth explaining for this discussion of a performance
+driven implementation.
 This chapter hopes to provide all the background
 necessary for an undergraduate software engineer
 to understand and appreciate the rest of the paper.
@@ -10,41 +12,31 @@ programming paradigms.
 \section{Functional Languages}
 Functional programming languages are defined by their use
 of function evaluation as the primary means of computation.
-This stands in contrast to imperative programming languages,
-such as Java, which compute by executing a series of 
+This stands in contrast to imperative programming languages
+such as Java which represents computation as a series of 
 statements. The distinguishing factor being that statements
 are capable of manipulating state whereas functions,
 in a functional context, cannot.
-In that sense, functional functions are similar to imperative
-expressions than imperative functions since they can potentially
-modify the state of the program.
+In that sense functional functions are more similar to imperative
+expressions than imperative functions.
+
+Many mainstream programming languages support first-class functions and thus support programming in a functional style. However, whether they are considered functional programming languages is largely determined by the dominant programming style of the community. For instance, while Java 8+ supports programming in a functional style it is still typically considered an object orientated language. Figure
+\ref{fig:imperative_vs_functional_example} illustrates this by showing a imperative and functional approach to finding the sum
+of a list in Java.
+
+\todo[inline]{Address purity, reference haskell book}
 
 
-Functional languages understand execution as the evaluation
-expressions. This is in contrast to imperative languages
-which represents execution as the evaluation of statements.
-The key difference being that statements can potentially
-modify state that is not local to the statement. 
-Figure \ref{fig:imperative_example} showcases an example
-of this. In contrast, an expression cannot manipulate any
-state. Instead, new values must be created whenever a
-different value is desired.
+\input{figures/02_background/imperative_vs_functional_example.tex}
 
-\todo[inline]{This paragraph can provide an example of a
-functional program. In particular reference the performance
-of the Haskell book: "Central to functional programming is the
-idea of a function, which computes a result that depends
-on the value of its inputs}
-
-\input{figures/02_background/imperative_example.tex}
-
-\input{figures/02_background/functional_example.tex}
 
 \section{Concatenative and compositional languages}
-These two terms are often used to refer to similar concepts. However,
-there is a slight distinction. A concatenative language is one
-where the source code of two programs can be concatenated together
-into a meaningful program.
+Concatenative and compositional are two labels that are often used in tandem when describing a programming language. The first label is used to describe a programming languages where the source code of two programs can be concatenated together into a meaningful program, and the second a language where the juxtaposition of terms denotes function composition. Together they describe a language 
+These two terms are often used to refer to similar concepts. Whereas, a compositional language implies that the juxtaposition of terms denotes function composition. This again stands in contrast to what are commonly termed as applicative languages, such as Haskell, where the juxtaposition of terms denotes
+function application.
+
+Together these properties describe a language where individual terms are simply stages in a pipeline. For instance, in such a language the program: abc, might describe a program that takes
+input X and outputs input Y and the program: def might describe a program that takes input Y and outputs Z. Then the program: abcdef is a program that takes input X and outputs Z.
 
 A compositional language is one where the default mode of operation
 is the composition of functions. For instance,...
