@@ -1,0 +1,16 @@
+\begin{figure}[htb]
+    \begin{mdframed}
+    
+    \begin{grammar}
+    <program> ::= { <term> }
+
+    <abstraction> ::= '(' <term> ')'
+
+    <operator> ::= 'apply' | 'left' | 'right' | 'copy' | 'drop'
+
+    <term> ::= <abstraction> | <operator>
+    \end{grammar}
+    \end{mdframed}
+    \caption{The grammar of Kihi}
+    \label{fig:kihi_grammar}
+\end{figure}

@@ -35,10 +35,19 @@ Concatenative and compositional are two labels that are often used in tandem whe
 
 \todo[inline]{Do concrete example if Forth or something, also find a reference}
 
-\section{Kihi Grammar}
-Before exploring the semantics of Kihi, the grammar must be understood. A Kihi program consists of a sequence of terms. There are six types of terms: one value type and five operators that can manipulate values. The value type, more commonly referred to as an abstraction, is a Kihi program captured by parenthesis. The exact behaviour of the operators are described later. Figure \ref{fig:kihi_grammar} presents the formal grammar of Kihi and figure \ref{fig:kihi_example} showcases an example of a Kihi program.
+\section{Kihi}
+The Kihi programming language is the focus of this report so it is worthwhile to explain its structure and operation in detail. This section begins with an explanation of the language's grammar which is followed by an exploration of two ways a Kihi program can be executed.
 
-\section{Kihi Evaluation Methods}
+\subsection{Grammar}
+As previous mentioned, Kihi consists of only six types of terms: one value type and five operators that can manipulate values. The value type, more commonly referred to as an abstraction, is a Kihi program captured by parenthesis. The is illustrated by figure \ref{fig:kihi_grammar} which shows the formal grammar of Kihi and figure \ref{fig:kihi_example} which provides an example of a Kihi program.
+
+\input{figures/02_background/kihi_grammar.tex}
+\input{figures/02_background/kihi_example.tex}
+\todo[inline]{Add citation for the counting program?}
+\todo[inline]{Provide examples of how the operators work}
+\todo[inline]{The exact behaviour of the operators are described later}
+
+\subsection{Kihi Evaluation Methods}
 
 \subsection{Kihi Operational Semantics}
 
@@ -59,27 +68,6 @@ mapping Kihi to machine instructions.
 
 It limits the space of possible
 optimisations and is also far detracted from actual bare metal instructions.
-
-
-\begin{figure}[htb]       
-    \centering
-    \begin{grammar}
-    <program> ::= { <term> }
-
-    <abstraction> ::= '(' <term> ')'
-
-    <term> ::= <abstraction>
-        \alt 'apply'
-        \alt 'left'
-        \alt 'right'
-        \alt 'copy'
-        \alt 'drop'
-    
-      \end{grammar}
-    \caption{}
-    \label{fig:grammar}
-\end{figure}
-
 
 
 \begin{figure}
