@@ -31,29 +31,12 @@ of a list in Java.
 
 
 \section{Concatenative and compositional languages}
-Concatenative and compositional are two labels that are often used in tandem when describing a programming language. The first label is used to describe a programming languages where the source code of two programs can be concatenated together into a meaningful program, and the second a language where the juxtaposition of terms denotes function composition. Together they describe a language 
-These two terms are often used to refer to similar concepts. Whereas, a compositional language implies that the juxtaposition of terms denotes function composition. This again stands in contrast to what are commonly termed as applicative languages, such as Haskell, where the juxtaposition of terms denotes
-function application.
+Concatenative and compositional are two labels that are often used in tandem when describing a programming language. The first label is used to describe a programming languages where the source code of two programs can be concatenated together into a meaningful program, and the second a language where the juxtaposition of terms denotes function composition. These labels are often found together because these properties are closely associated. Any language that is compositional can easy express pipeline processes by simply enumerating the stages. It is then also clear that the source code of such programs can also be concatenated to form a larger pipeline with the combined stages of the two.
 
-Together these properties describe a language where individual terms are simply stages in a pipeline. For instance, in such a language the program: abc, might describe a program that takes
-input X and outputs input Y and the program: def might describe a program that takes input Y and outputs Z. Then the program: abcdef is a program that takes input X and outputs Z.
-
-A compositional language is one where the default mode of operation
-is the composition of functions. For instance,...
-The typical way of thinking in such languages, such as Om and Forth,
-is to imagine a stack, real or otherwise, being pass from each term
-to the next.
-
-Another common property of this class of languages is that evaluation
-is typically performed left to right, in contrast to Kihi which is
-evaluated right to left.
-
-The confusion arises due to the fact that concatenative languages are
-almost always also compositional.
-While, concatenative languages are often compositional 
-
+\todo[inline]{Do concrete example if Forth or something, also find a reference}
 
 \section{Kihi Grammar}
+Before exploring the semantics of Kihi, the grammar must be understood. A Kihi program consists of a sequence of terms. There are six types of terms: one value type and five operators that can manipulate values. The value type, more commonly referred to as an abstraction, is a Kihi program captured by parenthesis. The exact behaviour of the operators are described later. Figure \ref{fig:kihi_grammar} presents the formal grammar of Kihi and figure \ref{fig:kihi_example} showcases an example of a Kihi program.
 
 \section{Kihi Evaluation Methods}
 

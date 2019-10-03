@@ -21,3 +21,26 @@ Add symbolic execution to the stack model.
 Perfor multi pass optimisation of symbols.
 
 Combine symbols that can be combined. i.e. s1 :: 2 arg -> 0 , s2 :: 0 arg -> 1 arg => s1 s2 :: 1 arg -> 0
+
+
+
+These two terms are often used to refer to similar concepts. Whereas, a compositional language implies that the juxtaposition of terms denotes function composition. This again stands in contrast to what are commonly termed as applicative languages, such as Haskell, where the juxtaposition of terms denotes
+function application.
+
+Together these properties describe a language where individual terms are simply stages in a pipeline. For instance, in such a language the program: abc, might describe a program that takes
+input X and outputs input Y and the program: def might describe a program that takes input Y and outputs Z. Then the program: abcdef is a program that takes input X and outputs Z.
+
+A compositional language is one where the default mode of operation
+is the composition of functions. For instance,...
+The typical way of thinking in such languages, such as Om and Forth,
+is to imagine a stack, real or otherwise, being pass from each term
+to the next.
+
+Another common property of this class of languages is that evaluation
+is typically performed left to right, in contrast to Kihi which is
+evaluated right to left.
+
+The confusion arises due to the fact that concatenative languages are
+almost always also compositional.
+While, concatenative languages are often compositional 
+
