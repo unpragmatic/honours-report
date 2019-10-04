@@ -1,0 +1,31 @@
+\begin{figure}
+    \renewcommand{\labelitemi}{$\textendash$}
+    \begin{enumerate}
+        \item \textbf{Apply} releases the sequence of terms captured by an abstraction:
+        \begin{itemize}
+            \item \lstinline{apply (x)} $\leadsto$ \lstinline{x}
+        \end{itemize}
+
+        \item \textbf{Left} places the second abstraction at the start of the first:
+        \begin{itemize}
+            \item \lstinline{left (x) (y)} $\leadsto$ \lstinline{((y) x)}
+        \end{itemize}
+
+        \item \textbf{Right} places the second abstraction at the end of the first:
+        \begin{itemize}
+            \item \lstinline{right (x) (y)} $\leadsto$ \lstinline{(x (y))}
+        \end{itemize}
+
+        \item \textbf{Copy} copies an abstraction:
+        \begin{itemize}
+            \item \lstinline{copy (x)} $\leadsto$ \lstinline{(x) (x)}
+        \end{itemize}
+
+        \item \textbf{Drop} deletes an abstraction:
+        \begin{itemize}
+            \item \lstinline{drop (x)} $\leadsto$ \lstinline{}
+        \end{itemize}
+    \end{enumerate}
+    \caption{An explanation of the five Kihi operators}
+    \label{fig:operator_explanation}
+\end{figure}

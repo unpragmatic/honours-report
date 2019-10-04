@@ -1,0 +1,23 @@
+\begin{figure}[htb]
+    \centering
+    \begin{lstlisting}
+execute_program(input: String):
+    program: []Term := parse_program(input)
+    
+    stack: []Term := []
+    
+    while(|terms| != 0) {
+        term := terms.pop()
+        if term is abstraction => stack.push(term)
+        else if term is 'apply' => program.append( stack.pop() )
+        else if term is 'left' => {
+            arg1 = stack.pop()
+            arg2 = stack.pop()
+            stack.push( [arg2] ++ arg2 )
+        }
+        ... and so on for each inference rule
+    }
+    \end{lstlisting}
+    \caption{Pseudocode for a stack based Kihi execution}
+    \label{fig:stack_pseudocode}
+\end{figure}

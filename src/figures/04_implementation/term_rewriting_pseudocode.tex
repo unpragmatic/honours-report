@@ -1,0 +1,36 @@
+\begin{figure}[htb]
+    \centering
+    \begin{lstlisting}
+execute_program(input: String):
+    terms: []Term := parse_program(input)
+    
+    reductible_term: Index := find_reductible_term(terms)
+    while (reductible_term != -1) {
+        reduce_term(terms, reductible_term)
+    }
+
+find_reductible_term(terms: []Term):
+    for i: Index in 0..|terms| {
+        if terms[i] is 'apply'
+            and terms[i+1] is abstraction => return i
+        else if terms[i] is 'left'
+            and terms[i+1] and terms[i+2] are abstractions => return i
+        else if terms[i] is 'drop'
+            and terms[i+1] => return i
+        ... and so on for each inference rule
+        }
+    }
+    return -1
+
+reduce_term(terms: []Term, term: Index):
+    if terms[index] is 'apply'
+        terms[index..index+1] = terms[index+1]
+    else if terms[index] is 'left'
+        terms[index..index+2] = [terms[index+2], ...terms[index+1]]
+    else if terms[index] is 'drop'
+        terms[index..index+1] = []
+    ... and so on for each inference rule
+    \end{lstlisting}
+    \caption{Pseudocode for a stack based Kihi execution}
+    \label{fig:stack_pseudocode}
+\end{figure}

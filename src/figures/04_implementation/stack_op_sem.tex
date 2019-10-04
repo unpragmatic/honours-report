@@ -1,12 +1,12 @@
-\begin{figure}[htb]
+\begin{figure}[p]
     \centering
     \begin{frame}{}
     \infax{
-        Program = \langle t_n \mid t \in Terms \rangle
+        Program = \langle t_0 : t_1 : \dots : t_n \rangle \ |\ t \in Terms
     }
 
     \infax{
-        Stack = \langle t_n | t \in Abstractions \rangle
+        Stack = \langle v_0 : v_1 : \dots : v_n \rangle \ |\ v \in Abstractions
     }
 
     \infax{
@@ -18,38 +18,34 @@
         \cup Abstractions \\
     }
 
+    \infrule[Abstraction]
+        {t \in Abstractions}
+        {\kihi{ \dots : v_n}, \kihi{ t } \leadsto \kihi{ \dots : v_n : t}, \kihi{ }}
+
     \infrule[Apply]
-        {t \in Abstractions \andalso t = (p)}
-        {\kihi{ \mbox{apply} : t } \leadsto p}
+        {}
+        {\kihi{ \dots : v_n}, \kihi{ `apply' } \leadsto \kihi{ \dots }, \kihi{ v_n }}}
 
     \infrule[Left]
-        {t_1, t_2 \in Abstractions \andalso t_1 = (p_1)}
-        {
-            \kihi{ \mbox{left} : t_1 : t_2 }
-            \leadsto 
-            \kihi{ t_2 : p1 }
-        }
+        {v_1 = (p)}
+        {\kihi{ \dots : v_2 : v_1}, \kihi{ `left' } \leadsto \kihi{ \dots : (v_2 : p) }, \kihi{ }}}
 
     \infrule[Right]
-        {t_1, t_2 \in Abstractions \andalso t_1 = (p_1) \andalso t_2 = (p_2)}
-        {
-            \kihi{ \mbox{right} : t_1 : t_2 }
-            \leadsto 
-            \kihi{ p_1 : t_2 }
-        }
+        {v_1 = (p)}
+        {\kihi{ \dots : v_2 : v_1}, \kihi{ `left' } \leadsto \kihi{ \dots : (p : v_2) }, \kihi{ }}}
 
     \infrule[Copy]
-        {t \in Abstractions}
-        {\kihi{ \mbox{copy} : t } \leadsto \kihi{ t : t }}
+        {}
+        {\kihi{ \dots : v_n}, \kihi{ `copy' } \leadsto \kihi{ \dots : v_n : v_n }, \kihi{ }}}
 
     \infrule[Drop]
-        {t_2 = (p_1)}
-        {\langle \mbox{drop} : t_2 \rangle \leadsto \emptyset}
+        {}
+        {\kihi{ \dots : v_n}, \kihi{ `drop' } \leadsto \kihi{ \dots }, \kihi{ }}}
 
-    \infrule[Term Rewriting]
-        {p_1 \leadsto p_2}
-        {\langle p : p_1 : p' \rangle \leadsto p : p_2 : p'}
+    \infrule[Stack Machine]
+        {s, p \leadsto s', p'}
+        {s, \langle \dots : p \rangle \leadsto s', \kihi{ \dots : p'}}
     \end{frame}
-    \caption{Term rewriting operational semantics for Kihi}
-    \label{fig:term_rewriting_op_sem}
+    \caption{Stack operational semantics for Kihi}
+    \label{fig:stack_op_sem}
 \end{figure}

@@ -33,67 +33,26 @@ of a list in Java.
 \section{Concatenative and compositional languages}
 Concatenative and compositional are two labels that are often used in tandem when describing a programming language. The first label is used to describe a programming languages where the source code of two programs can be concatenated together into a meaningful program, and the second a language where the juxtaposition of terms denotes function composition. These labels are often found together because these properties are closely associated. Any language that is compositional can easy express pipeline processes by simply enumerating the stages. It is then also clear that the source code of such programs can also be concatenated to form a larger pipeline with the combined stages of the two.
 
-\todo[inline]{Do concrete example if Forth or something, also find a reference}
+\todo[inline]{Do concrete example of Forth or something, also find a reference}
 
 \section{Kihi}
-The Kihi programming language is the focus of this report so it is worthwhile to explain its structure and operation in detail. This section begins with an explanation of the language's grammar which is followed by an exploration of two ways a Kihi program can be executed.
+The Kihi programming language is the focus of this report so it is worthwhile to explain its structure and operation in detail. This section begins with an explanation of the language's grammar and follows up with an exploration of two ways a Kihi program can be executed.
 
 \subsection{Grammar}
-As previous mentioned, Kihi consists of only six types of terms: one value type and five operators that can manipulate values. The value type, more commonly referred to as an abstraction, is a Kihi program captured by parenthesis. The is illustrated by figure \ref{fig:kihi_grammar} which shows the formal grammar of Kihi and figure \ref{fig:kihi_example} which provides an example of a Kihi program.
+As previous mentioned, Kihi consists of only six types of terms: one value type and five operators that can manipulate values. The value type, more commonly referred to as an abstraction, is a Kihi program captured by parenthesis. The is illustrated by figure \ref{fig:kihi_grammar} which shows the formal grammar of Kihi and figure \ref{fig:kihi_example} which provides an example of a Kihi program. The operators are plainly explained in figure \ref{fig:operator_explanation}.
 
 \input{figures/02_background/kihi_grammar.tex}
 \input{figures/02_background/kihi_example.tex}
+
 \todo[inline]{Add citation for the counting program?}
 \todo[inline]{Provide examples of how the operators work}
 \todo[inline]{The exact behaviour of the operators are described later}
 
-\subsection{Kihi Evaluation Methods}
-
-\subsection{Kihi Operational Semantics}
+\input{figures/02_background/operator_explanation}
 
 
-
-Either
-one of five operators or an abstraction: a sequence of Kihi terms
-captured by parenthesis. 
-
-The complete grammar for the language is given
-in figure \ref{fig:grammar}. The semantics of the language make it
-interesting from a research perspective. The limited expressiveness of
-the language prevents the common approach to optimisation where expressive
-abstractions can be compiled to efficient machine code. [cite static
-dispatch optimisation]. Furthermore, the abstractions/semantics of Kihi are
-also far disjoined from bare metal. This incurs the additional overhead of
-mapping Kihi to machine instructions.
-
-It limits the space of possible
-optimisations and is also far detracted from actual bare metal instructions.
-
-
-\begin{figure}
-    \centering
-    \begin{enumerate}
-        \item \textbf{Apply} releases the sequence of terms captured by an abstraction.
-        \item \textbf{Left} places the second abstraction at the start of the first
-        \item \textbf{Right} places the second abstraction at the end of the first
-        \item \textbf{Copy} copies an abstraction
-        \item \textbf{Drop} deletes an abstraction
-    \end{enumerate}
-    \caption{English explanation of operators}
-    \label{fig:operator explanation}
-\end{figure}
-
-Of these terms, only one acts as a value
-
-\section{Execution Style}
-There are two main execution styles that can be used to execute
-a Kihi program: a term rewriting approach and a stack based 
-approach. These two approachs are identical for side-effect
-free and terminating programs, however, the observed
-behaviour for other varieties of programs can differ
-substantially depending on the execution style. The rest of 
-this section describes these two execution styles and 
-concludes by contrasting their behaviour.
+\subsection{Evaluation Methods}
+There are two main execution styles that can be used to execute Kihi programs: a term rewriting based approach and a stack based approach. These two approaches are identical in terms of output for terminating programs, however performance and output can differ significantly for certain classes of programs. This section describes the two execution styles and explains when they differ.
 
 \subsubsection{Term Rewriting}
 Term rewriting is the process of finding
@@ -103,30 +62,25 @@ some number of abstractions. The specific number of abstractions
 required is determined by the term and can be thought of as the
 number of arguments. This execution paradigm allows execution
 to occur anywhere in the program because a reducible term may
-be found anywhere in the program and this reduction can be
-thought of as an execution step.
+be found anywhere in the program and each reduction can be
+thought of as an execution step. The operational semantics for a term rewriting based execution of
+Kihi is shown in figure \ref{fig:term_rewriting_op_sem}. Informally, term rewriting can be understood by referring to figure \ref{fig:operator_explanation}. The process is simply consists of finding a term where the rules shown in figure \ref{fig:operator_explanation} can be applied and applying them.
 
-The operational semantics for a term rewriting based execution of
-Kihi is shown is figure \ref{fig:term_rewriting_op_sem}.
+\todo[inline]{reword informal}
+
+\subsubsection{Stack}
+Stack based execution is a model of execution where each term has a specific effect on a stack. The terms are typically either processed in a right to left order or vice versa. In contrast to term rewriting, execution is restricted to a specific next term. In the context of Kihi, the next term is the rightmost term of the program. The operational semantics for a stack based Kihi implementation are provided in figure \ref{fig:stack_op_sem}. Informally, it can be understood as a processes each term from right to left in order where the term's can manipulate the stack and program. When an abstraction is encountered it is simply pushed onto the stack, and when an operator is encountered the arguments it requires are popped off the stack and the result either pushed onto the stack, in the case of left, right, copy, or discard in the case of drop, or appended to the program in the case of apply.
+
+\todo[inline]{reword informal explanation}
 
 \input{figures/04_implementation/term_rewriting_op_sem.tex}
 \input{figures/04_implementation/stack_op_sem.tex}
 
 
-\subsubsection{Stack Based}
-Stack based execution is a model of execution where each term
-has a specfic effect on a global stack. The terms are typically
-either processed in a right to left order or vice versa. This
-restricts execution to the rightmost or leftmost term. Furthermore,
-the use of stack restricts the arguments accessible to each term.
-Stack based execution imagines the terms of the program as
-instructions for a stack machine. The terms are scanned
-right to left and an action performed depending on the term
-encountered. For instance, whenever an abstraction is found
-it is pushed onto the stack and whenever a drop is found the
-topmost value of the stack is popped and discarded.
 
-\subsubsection{Differences}
+
+\subsubsection{Term Rewriting vs Stack}
+\todo[inline]{
 The most fundamental difference these methods of execution is
 revealed when term rewriting is broken down into two fundamental steps.
 
@@ -177,3 +131,5 @@ Any acknowledgments should go
 in here, between the title page and the table of contents.  The 
 acknowledgments do not form a proper chapter, and so don't get a 
 number or appear in the table of contents.
+}
+\todo[inline]{Address the addition of side-effectful operators}.

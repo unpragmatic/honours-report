@@ -5,7 +5,7 @@ There are a lot of heap allocations that can be removed.
 This can also be done by using a better encoding that is able
 to better reuse symbols
 
-todo make numbers work in a flat hierachy  (i.e. do no preprocess)
+todo make numbers work in a flat hierachy  (i.e. do no preprocess) done?
 
 Could design an interpreter that uses stack until a value is requested. When a
 value is requested then left reduce could be used.
@@ -48,3 +48,20 @@ The confusion arises due to the fact that concatenative languages are
 almost always also compositional.
 While, concatenative languages are often compositional 
 
+
+
+Either
+one of five operators or an abstraction: a sequence of Kihi terms
+captured by parenthesis. 
+
+The complete grammar for the language is given
+in figure \ref{fig:grammar}. The semantics of the language make it
+interesting from a research perspective. The limited expressiveness of
+the language prevents the common approach to optimisation where expressive
+abstractions can be compiled to efficient machine code. [cite static
+dispatch optimisation]. Furthermore, the abstractions/semantics of Kihi are
+also far disjoined from bare metal. This incurs the additional overhead of
+mapping Kihi to machine instructions.
+
+It limits the space of possible
+optimisations and is also far detracted from actual bare metal instructions.
