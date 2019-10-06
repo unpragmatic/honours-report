@@ -1,9 +1,18 @@
-\chapter{Implementation} \label{C:implementation} 
+\chapter{Design and Implementation} \label{C:implementation} 
+This chapter discusses the details of the Kihi implementation presented in this report. Specifically, this section shows how the semantics outlined in chapter \ref{C:background} can be interpreted as code and discusses various performance driven design decisions, such as language choice and optimisation strategies. But firstly, in order to guide the discussion, the features of the final implementation are discussed.
 
-This paper is about an implementation of Kihi virtual machine
-in Rust. This language was chosen for its support for low
-level programming but also because it provides guarantees about
-memory safety and expressive high level abstractions.
+\section{Operational Semantics to Code}
+A basic implementation of Kihi is straight forward. An almost direct translation of the operational semantics presented in figure \ref{fig:term_rewriting_op_sem} and figure \ref{fig:stack_op_sem} is possible as shown by the pseudocode in figure \ref{fig:term_rewriting_pseudocode} and figure \ref{fig:stack_pseudocode}. Furthermore, the pseudocode in the figures are an accurate representation of the respective implementations avaliable in the actual binary.
+
+
+
+this was the approach taken for the initial implementations. The appendix provides commit hashes for particularly noteworthy implementations, however the latest commit provides backwards compatibility to run later editions for benchmarking and prosperity's sake.
+
+The language
+
+\todo[inline]{wordy wtf change this.}
+
+
 
 \section{Language Choice}
 
@@ -23,6 +32,7 @@ motivation behind this method
 \section{Execution Style}
 
 
-\input{figures/04_implementation/stack_pseudocode}
+\section{Benchmark Suite}
+
 \input{figures/04_implementation/term_rewriting_pseudocode}
-\todo[inline]{Put pseudocode of both implementations}
+\input{figures/04_implementation/stack_pseudocode}

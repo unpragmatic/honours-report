@@ -24,23 +24,23 @@
 
     \infrule[Apply]
         {}
-        {\kihi{ \dots : v_n}, \kihi{ `apply' } \leadsto \kihi{ \dots }, \kihi{ v_n }}}
+        {\kihi{ \dots : v_n}, \kihi{ `apply' } \leadsto \kihi{ \dots }, \kihi{ v_n }}
 
     \infrule[Left]
         {v_1 = (p)}
-        {\kihi{ \dots : v_2 : v_1}, \kihi{ `left' } \leadsto \kihi{ \dots : (v_2 : p) }, \kihi{ }}}
+        {\kihi{ \dots : v_2 : v_1}, \kihi{ `left' } \leadsto \kihi{ \dots : (v_2 : p) }, \kihi{ }}
 
     \infrule[Right]
         {v_1 = (p)}
-        {\kihi{ \dots : v_2 : v_1}, \kihi{ `left' } \leadsto \kihi{ \dots : (p : v_2) }, \kihi{ }}}
+        {\kihi{ \dots : v_2 : v_1}, \kihi{ `left' } \leadsto \kihi{ \dots : (p : v_2) }, \kihi{ }}
 
     \infrule[Copy]
         {}
-        {\kihi{ \dots : v_n}, \kihi{ `copy' } \leadsto \kihi{ \dots : v_n : v_n }, \kihi{ }}}
+        {\kihi{ \dots : v_n}, \kihi{ `copy' } \leadsto \kihi{ \dots : v_n : v_n }, \kihi{ }}
 
     \infrule[Drop]
         {}
-        {\kihi{ \dots : v_n}, \kihi{ `drop' } \leadsto \kihi{ \dots }, \kihi{ }}}
+        {\kihi{ \dots : v_n}, \kihi{ `drop' } \leadsto \kihi{ \dots }, \kihi{ }}
 
     \infrule[Stack Machine]
         {s, p \leadsto s', p'}
