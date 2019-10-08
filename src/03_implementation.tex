@@ -2,11 +2,22 @@
 This chapter discusses the details of the Kihi implementation presented in this report. Specifically, this section shows how the semantics outlined in chapter \ref{C:background} can be implemented and discusses various performance driven design decisions, such as language choice and optimisation strategies. But firstly, in order to guide the discussion, an overview of the actual program is presented below.
 
 \section{Overview}
-The executable described within this report is capable of executing Kihi source directly. The executable takes as an argument the path to a text file contain Kihi source code, encoded in either UTF-8 or ASCII, and subsequently runs the program, emitting any outputs to standard output. Internally,the source code is first parsed into an intermediary representation before execution. This     intermediary representation is mostly identical to the grammar shown in figure \ref{fig:kihi_grammar} barring implementation details, debugging symbols, and optimisation mechanisms. The optimisation mechanisms are of particular interest and are discussed in greater detail in section \ref{sec:implementation_optimisation}. The execution process involves selecting an executor, which can be understood as virtual machines, and utilising it to execute the intermediary representation. Test
+The implementation described within this report is capable of executing Kihi source directly. Internally, the source code is first parsed into an intermediary representation before execution. The details of the intermediary representation are discussed in section \ref{sec:implementation_intermediary_representation}. The execution process involves selecting an executor, which can be understood as a virtual machine, and utilising it to execute the intermediary representation. The executable can be built with support for three types of executors: an executor based on term rewriting operational semantics, an executor based on stack operational semantics, and a depreciated term rewriting based executor kept for posterity. 
 
-The executable also has various configuration options avaliable at compile time and run time. At compile time feature flags can be set to include executors in the binary. By default the binary is only built with the reduce executor, which utilises term rewriting operational semantics, however an executor based on stack operational semantics can be included in addition to a previous implementation of the reduce executor.
+The implementation also has various configuration options avaliable at compile time and run time. Compile time options are avaliable through feature flags and run time options through command line flags. Feature flags make it possible to include or exclude various features such as the aforementioned executors, cpu profiling, and printing to output in the final binary. While the run time arguments make it possible to specify which executor to utilise, degree of optimisation and number of outputs to print.
 
-During compilation, options such as profiling, printing to standard out, and 
+\todo[inline]{
+    maybe in background elaborate on what a virtual machine is?
+}
+
+\todo[inline]{
+    move this:
+    This intermediary representation is mostly identical to the grammar shown in figure \ref{fig:kihi_grammar} barring implementation details, debugging symbols, and optimisation mechanisms. The optimisation mechanisms are of particular interest and are discussed in greater detail in section \ref{sec:implementation_optimisation}.
+    The executable takes as an argument the path to a text file contain Kihi source code, encoded in either UTF-8 or ASCII, and subsequently runs the program, emitting any outputs to standard output.
+}
+
+\section{Intermediary Representation}\label{sec:implementation_intermediary_representation}
+The intermediary representation is mostly identical to the grammar shown in figure \ref{fig:kihi_grammar} barring implementation details,debugging symbols, and optimisation mechanisms. The optimisation mechanisms are of particular interest and are discussed in greater detail in section \ref{sec:implementation_optimisation}.
 
 \section{Operational Semantics to Code}
 A basic implementation of Kihi is straight forward. An almost direct translation of the operational semantics presented in figure \ref{fig:term_rewriting_op_sem} and figure \ref{fig:stack_op_sem} is possible as shown by the pseudocode in figure \ref{fig:term_rewriting_pseudocode} and figure \ref{fig:stack_pseudocode}. Furthermore, the pseudocode in the figures are an accurate representation of the respective implementations avaliable in the actual binary.
