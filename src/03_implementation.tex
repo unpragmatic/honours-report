@@ -1,10 +1,10 @@
-\chapter{Design and Implementation} \label{C:implementation} 
-This chapter discusses the details of the Kihi implementation presented in this report. Specifically, this section shows how the semantics outlined in chapter \ref{C:background} can be implemented and discusses various performance driven design decisions, such as language choice and optimisation strategies. But firstly, in order to guide the discussion, an overview of the actual program is presented below.
+\chapter{Implementation} \label{C:implementation} 
+This chapter discusses the details of the Kihi implementation presented in this report. The heart of this chapter is a description of the various performance driven designs decisions and features made and developed for this implementation of Kihi. However, in order to understand that an understanding of the basic implementation is necessary. Specifically, how the semantics outlined in chapter \ref{C:background} can be implemented as code. But firstly, in order to guide the rest of the chapter, an overview of the implementation is presented below.
 
 \section{Overview}
-The implementation described within this report is capable of executing Kihi source directly. Internally, the source code is first parsed into an intermediary representation before execution. The details of the intermediary representation are discussed in section \ref{sec:implementation_intermediary_representation}. The execution process involves selecting an executor, which can be understood as a virtual machine, and utilising it to execute the intermediary representation. The executable can be built with support for three types of executors: an executor based on term rewriting operational semantics, an executor based on stack operational semantics, and a depreciated term rewriting based executor kept for posterity. 
+The executable implemented in this project is capable of executing Kihi source directly. Internally, the source code is first parsed and transformed into an intermediary representation before execution. The details of the intermediary representation are discussed in section \ref{sec:implementation_intermediary_representation}. The execution process involves selecting an executor, which can be understood as a virtual machine, and utilising it to execute the intermediary representation. The executable supports three types of executors: a term rewriting based executor, a stack based executor, and a depreciated term rewriting based executor kept for posterity. The implementation details of these executors are provided in section \ref{sec:implementation_executors}
 
-The implementation also has various configuration options avaliable at compile time and run time. Compile time options are avaliable through feature flags and run time options through command line flags. Feature flags make it possible to include or exclude various features such as the aforementioned executors, cpu profiling, and printing to output in the final binary. While the run time arguments make it possible to specify which executor to utilise, degree of optimisation and number of outputs to print.
+The implementation provides various configuration options available at compile time and run time. Compile time options are available through feature flags and run time options can be specified with command line flags. Feature flags make it possible to include or exclude various features such as the aforementioned executors, CPU profiling, and output printing. The run time arguments make it possible to specify which executor to utilise, degree of optimisation and number of outputs to print. More specific details are available in the project's readme.
 
 \todo[inline]{
     maybe in background elaborate on what a virtual machine is?
@@ -16,12 +16,23 @@ The implementation also has various configuration options avaliable at compile t
     The executable takes as an argument the path to a text file contain Kihi source code, encoded in either UTF-8 or ASCII, and subsequently runs the program, emitting any outputs to standard output.
 }
 
+\section{Implementation Language}
+This project was implemented in Rust. This decision was largely motivated by performance concerns and ease of use. Rust is considered a systems language and is designed with performance as a principal goal. An manifestation of this is manual control over memory in conjunction with a type system capable of guaranteeing memory safety. This provides the performance benefits of a low level language while retaining the safety benefits of a garbage collected language. 
+Rust was the language chosen for this project. This decision was largely motivated by performance concerns and ease of use. Rust provides many low level facilities and functional programming inspired features that make it particularly well suited for implementing a programming language. For instance it provides manual control over memory in conjunction with a type system capable of guaranteeing memory safety circumventing the need for garbage collection. It also also provides functional style pattern matching which greatly increases the ergonomics of the language and readability of the code especially in the context of programming language implementation, as shown by the ubiquitous use of the feature throughout the codebase. Another factor considered in the decision making process was Rust's reputation as a performance focused programming language. Together, these factors made Rust an especially compelling candidate and ultimately the language of choice for this project.
+
+\todo[inline]{Reference rust webpage?}
+
 \section{Intermediary Representation}\label{sec:implementation_intermediary_representation}
-The intermediary representation is mostly identical to the grammar shown in figure \ref{fig:kihi_grammar} barring implementation details,debugging symbols, and optimisation mechanisms. The optimisation mechanisms are of particular interest and are discussed in greater detail in section \ref{sec:implementation_optimisation}.
+The intermediary representation is mostly identical to the grammar shown in figure \ref{fig:kihi_grammar} barring implementation details, debugging symbols, and optimisation mechanisms. The purpose of the intermediary representation is two fold. Firstly, it decouples the source code from the executable representation allowing room for interpretation and optimisations. Secondly, it provides a common representation that can be interpreted by the various executors.
 
-\section{Operational Semantics to Code}
-A basic implementation of Kihi is straight forward. An almost direct translation of the operational semantics presented in figure \ref{fig:term_rewriting_op_sem} and figure \ref{fig:stack_op_sem} is possible as shown by the pseudocode in figure \ref{fig:term_rewriting_pseudocode} and figure \ref{fig:stack_pseudocode}. Furthermore, the pseudocode in the figures are an accurate representation of the respective implementations avaliable in the actual binary.
+The optimisation mechanisms are of particular interest and are discussed in greater detail in section \ref{sec:implementation_optimisation}. However, in the context of the intermediary representation, this only manifests as an additional term in the data structure called `Symbol'.
 
+\todo[inline]{Add figure of the intermediary representation}
+
+\section{Executors}\label{sec:implementation_executors}
+A basic implementation of Kihi is straight forward. An almost direct translation of the operational semantics presented in figure \ref{fig:term_rewriting_op_sem} and figure \ref{fig:stack_op_sem} is possible as shown by the pseudocode in figure \ref{fig:term_rewriting_pseudocode} and figure \ref{fig:stack_pseudocode}. 
+
+Furthermore, the pseudocode in the figures are an accurate representation of the respective implementations available in the actual binary.
 
 
 this was the approach taken for the initial implementations. The appendix provides commit hashes for particularly noteworthy implementations, however the latest commit provides backwards compatibility to run later editions for benchmarking and prosperity's sake.
@@ -31,8 +42,6 @@ The language
 \todo[inline]{wordy wtf change this.}
 
 
-
-\section{Language Choice}
 
 \section{Optimisation}\label{sec:implementation_optimisation}
 There were two primary optimisations implemented in the Kihi virtual
