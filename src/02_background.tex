@@ -33,6 +33,9 @@ Concatenative and compositional are two labels that are often used in tandem whe
 
 \todo[inline]{Do concrete example of Forth or something, also find a reference}
 
+
+\input{figures/02_background/operator_explanation}
+
 \section{Kihi}
 The Kihi programming language is the focus of this report so it is worthwhile to explain its structure and operation in detail. This section begins with an explanation of the language's grammar and follows up with an exploration of two ways a Kihi program can be executed.
 
@@ -46,10 +49,8 @@ As previous mentioned, Kihi consists of only six types of terms: one value type 
 \todo[inline]{Provide examples of how the operators work}
 \todo[inline]{The exact behaviour of the operators are described later}
 
-\input{figures/02_background/operator_explanation}
 
-
-\subsection{Evaluation Methods}
+\subsection{Evaluation Methods}\label{sec:background_evaluation_methods}
 There are two main execution styles that can be used to execute Kihi programs: a term rewriting based approach and a stack based approach. These two approaches are identical in terms of output for terminating programs, however performance and output can differ significantly for certain classes of programs. This section describes the two execution styles and explains when they differ.
 
 \subsubsection{Term Rewriting}
@@ -64,19 +65,21 @@ be found anywhere in the program and each reduction can be
 thought of as an execution step. The operational semantics for a term rewriting based execution of
 Kihi is shown in figure \ref{fig:term_rewriting_op_sem}. Informally, term rewriting can be understood by referring to figure \ref{fig:operator_explanation}. The process is simply consists of finding a term where the rules shown in figure \ref{fig:operator_explanation} can be applied and applying them.
 
-\todo[inline]{reword informal}
-
+% \todo[inline]{reword informal}
 \subsubsection{Stack}
 Stack based execution is a model of execution where each term has a specific effect on a stack. The terms are typically either processed in a right to left order or vice versa. In contrast to term rewriting, execution is restricted to a specific next term. In the context of Kihi, the next term is the rightmost term of the program. The operational semantics for a stack based Kihi implementation are provided in figure \ref{fig:stack_op_sem}. Informally, it can be understood as a processes each term from right to left in order where the term's can manipulate the stack and program. When an abstraction is encountered it is simply pushed onto the stack, and when an operator is encountered the arguments it requires are popped off the stack and the result either pushed onto the stack, in the case of left, right, copy, or discard in the case of drop, or appended to the program in the case of apply.
 
 \todo[inline]{reword informal explanation}
 
+
+
+% The key difference between these methods of execution is
+% revealed when term rewriting is broken down into its two fundamental steps. Namely, first finding an executable term, and secondly executing it. The stack based style can be viewed as a simplification of term rewriting where the first step is irrelevant.
+
+% In fact, term rewriting can very easily simulate a stack machine by storing the stack within the program.
+
 \input{figures/04_implementation/term_rewriting_op_sem.tex}
 \input{figures/04_implementation/stack_op_sem.tex}
-The key difference between these methods of execution is
-revealed when term rewriting is broken down into its two fundamental steps. Namely, first finding an executable term, and secondly executing it. The stack based style can be viewed as a simplification of term rewriting where the first step is irrelevant.
-
-In fact, term rewriting can very easily simulate a stack machine by storing the stack within the program.
 
 \subsubsection{Term Rewriting vs Stack}
 \todo[inline]{

@@ -2,13 +2,17 @@
 This chapter discusses the details of the Kihi implementation presented in this report. The heart of this chapter is a description of the various performance driven designs decisions and features made and developed for this implementation of Kihi. However, in order to understand that an understanding of the basic implementation is necessary. Specifically, how the semantics outlined in chapter \ref{C:background} can be implemented as code. But firstly, in order to guide the rest of the chapter, an overview of the implementation is presented below.
 
 \section{Overview}
-The executable implemented in this project is capable of executing Kihi source directly. Internally, the source code is first parsed and transformed into an intermediary representation before execution. The details of the intermediary representation are discussed in section \ref{sec:implementation_intermediary_representation}. The execution process involves selecting an executor, which can be understood as a virtual machine, and utilising it to execute the intermediary representation. The executable supports three types of executors: a term rewriting based executor, a stack based executor, and a depreciated term rewriting based executor kept for posterity. The implementation details of these executors are provided in section \ref{sec:implementation_executors}
+\input{figures/04_implementation/kihi_execution_process}
 
-The implementation provides various configuration options available at compile time and run time. Compile time options are available through feature flags and run time options can be specified with command line flags. Feature flags make it possible to include or exclude various features such as the aforementioned executors, CPU profiling, and output printing. The run time arguments make it possible to specify which executor to utilise, degree of optimisation and number of outputs to print. More specific details are available in the project's readme.
+The executable implemented in this project is capable of executing Kihi source directly. The detailed internal process is outlined in figure \ref{fig:kihi_execution_process}, and as the figure shows, the source code is first parsed and transformed into an intermediary representation before execution. The details of the intermediary representation are discussed in section \ref{sec:implementation_intermediary_representation}. This intermediary is then optionally optimised through the process of symbol detection, and symbol optimisation which is described in section \ref{sec:implementation_optimisation}. The details on the actual execution are ommited from the above figure due to complexity, but the process essentially involves selecting an executor, which can be understood as a virtual machine, and utilising it to execute the intermediary representation. The implementation supports three types of executors: a term rewriting based executor, a stack based executor, and a depreciated term rewriting based executor kept for posterity. The implementation details of the executor process and the executors are provided in section \ref{sec:implementation_executors}
 
 \todo[inline]{
     maybe in background elaborate on what a virtual machine is?
 }
+
+\section{Configuration}
+The implementation provides various configuration options available at compile time and run time. Compile time options are available through feature flags and run time options can be specified with command line flags. Feature flags make it possible to include or exclude various features such as the aforementioned executors, CPU profiling, and output printing. The run time arguments make it possible to specify which executor to utilise, degree of optimisation and number of outputs to print. More specific details are available in the project's readme.
+
 
 \todo[inline]{
     move this:
@@ -22,36 +26,31 @@ This project was implemented in Rust. This decision was largely motivated by per
 \todo[inline]{Reference rust webpage?}
 
 \section{Intermediary Representation}\label{sec:implementation_intermediary_representation}
-The intermediary representation is mostly identical to the grammar shown in figure \ref{fig:kihi_grammar} barring implementation details, debugging symbols, and optimisation mechanisms. The purpose of the intermediary representation is two fold. Firstly, it decouples the source code from the executable representation allowing room for interpretation and optimisations. Secondly, it provides a common representation that can be interpreted by the various executors. Figure \ref{fig:kihi_intermediary_representation} shows the
+The intermediary representation is essential identical to an abstract syntax tree of the grammar shown in figure \ref{fig:kihi_grammar} barring implementation details, debugging symbols, and optimisation mechanisms. The purpose of the intermediary representation is two fold. Firstly, it decouples the source code from the executable representation allowing room for the aforementioned differences. Secondly, it provides a common representation that can be interpreted by the various executors. An example of an intermediary representation is shown in figure \ref{fig:kihi_intermediary_representation_example_1}. The optimisation mechanisms introduced to the intermediary representation are the most interesting and are the subject of section \ref{sec:implementation_optimisation}. However, from the perspective of the intermediary representation, they merely manifest as an additional term in the grammar denoted as `Symbol'.
 
-\input{figures/04_implementation/kihi_execution_process}
 \input{figures/04_implementation/kihi_intermediary_representation_example_1}
-\input{figures/04_implementation/kihi_intermediary_representation_example_2}
 
-The optimisation mechanisms are of particular interest and are discussed in greater detail in section \ref{sec:implementation_optimisation}. However, in the context of the intermediary representation, this only manifests as an additional term in the data structure called `Symbol'.
-
-\todo[inline]{Add figure of the intermediary representation}
 
 \section{Executors}\label{sec:implementation_executors}
-A basic implementation of Kihi is straight forward. An almost direct translation of the operational semantics presented in figure \ref{fig:term_rewriting_op_sem} and figure \ref{fig:stack_op_sem} is possible as shown by the pseudocode in figure \ref{fig:term_rewriting_pseudocode} and figure \ref{fig:stack_pseudocode}. 
+Executors are used to compare the performance of execution methods.
+They represent virtual machines that are capable of executing the intermediary representation and are essentially the implementations of the operational semantics shown in section \ref{sec:background_evaluation_methods}. In fact, an almost direct translation of the semantics presented in that section lies at the heart of the actual implementation. Furthermore, the algorithm used in the implementation is accurately represented by the pseudocode in figures \ref{fig:term_rewriting_pseudocode} and \ref{fig:stack_pseudocode}. 
 
-Furthermore, the pseudocode in the figures are an accurate representation of the respective implementations available in the actual binary.
+Comparing the performance of executors is worthwhile because the implementation of the term rewriting semantics and the stack semantics, which hereinafter are refered to as the reduce executor and stack executor, are substantially different from a mechanical perspective. The pseudocode shown for the reduce executor can be understood as two parts: reducible term finding, and reduction; wheras The pseudocode for the stack executor simply consists of reduction.  Hypothetically it would appear that the stack executor would perform significantly better than the reduce executor simply due to the additional $\Theta(n)$ reducible term finding operation required before each instruction step, as shown by line 4 of figure \ref{fig:term_rewriting_pseudocode}. Whether this holds in practice is the topic of chapter \ref{C:evaluation}.
 
-
-this was the approach taken for the initial implementations. The appendix provides commit hashes for particularly noteworthy implementations, however the latest commit provides backwards compatibility to run later editions for benchmarking and prosperity's sake.
-
-The language
-
-\todo[inline]{wordy wtf change this.}
-
+As mentioned in earlier sections, a third executor also exists. This third executor is a previous implementation of the term rewriting operational semantics and is primarily kept for posterity. However, it also provides an useful indicator of how much the performance can vary when the underlying operational semantics are the same.
 
 
 \section{Optimisation}\label{sec:implementation_optimisation}
+The principal goal of this project is performance and thus it is unsurprin
 There were two primary optimisations implemented in the Kihi virtual
-machine. Firstly, symbolic analysis: finding commonly occuring or
+machine. Firstly, symbol detection: finding commonly occuring or
 meaningful sequences of terms, and secondly symbol optimisation: the
-process of dynamically constructing a more efficient method of executing
-a symbol. 
+process of constructing a more efficient representation of a symbol.
+
+\todo[inline]{This section. It is the most interesting and important probably}
+\todo[inline]{Challenge of efficiently representing a symbol}.
+
+\input{figures/04_implementation/kihi_intermediary_representation_example_2}
 
 \subsection{Symbolic Analysis}
 \todo[inline]{Find reference probably simmilar idea exists in lit}

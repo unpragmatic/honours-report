@@ -9,7 +9,7 @@ execute_program(input: String):
         reduce_term(terms, reductible_term)
     }
 
-find_reductible_term(terms: []Term):
+find_reductible_term(terms: []Term) -> Index:
     for i: Index in 0..|terms| {
         if terms[i] is 'apply'
             and terms[i+1] is abstraction => return i

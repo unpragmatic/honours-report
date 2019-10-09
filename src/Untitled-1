@@ -1,0 +1,62 @@
+\chapter{Design and Implementation} \label{C:implementation} 
+This chapter discusses the details of the Kihi implementation presented in this report. Specifically, this section shows how the semantics outlined in chapter \ref{C:background} can be implemented and discusses various performance driven design decisions, such as language choice and optimisation strategies. But firstly, in order to guide the discussion, an overview of the actual program is presented below.
+
+\section{Overview}
+The implementation described within this report is capable of executing Kihi source directly. Internally, the source code is first parsed into an intermediary representation before execution. The details of the intermediary representation are discussed in section \ref{sec:implementation_intermediary_representation}. The execution process involves selecting an executor, which can be understood as a virtual machine, and utilising it to execute the intermediary representation. The executable can be built with support for three types of executors: an executor based on term rewriting operational semantics, an executor based on stack operational semantics, and a depreciated term rewriting based executor kept for posterity. 
+
+The implementation also has various configuration options avaliable at compile time and run time. Compile time options are avaliable through feature flags and run time options through command line flags. Feature flags make it possible to include or exclude various features such as the aforementioned executors, cpu profiling, and printing to output in the final binary. While the run time arguments make it possible to specify which executor to utilise, degree of optimisation and number of outputs to print.
+
+\todo[inline]{
+    maybe in background elaborate on what a virtual machine is?
+}
+
+\todo[inline]{
+    move this:
+    This intermediary representation is mostly identical to the grammar shown in figure \ref{fig:kihi_grammar} barring implementation details, debugging symbols, and optimisation mechanisms. The optimisation mechanisms are of particular interest and are discussed in greater detail in section \ref{sec:implementation_optimisation}.
+    The executable takes as an argument the path to a text file contain Kihi source code, encoded in either UTF-8 or ASCII, and subsequently runs the program, emitting any outputs to standard output.
+}
+
+\section{Intermediary Representation}\label{sec:implementation_intermediary_representation}
+The intermediary representation is essentially an abstract syntax tree consisting of the terms specified in figure \ref{fig:kihi_grammar}. There are minor differences such as ease of implementation and debugging. additional terms have also 
+
+, however, more interestingly, are the terms introduced for optimisation purposes.
+
+ mostly identical to the grammar shown in figure \ref{fig:kihi_grammar} barring implementation details,debugging symbols, and optimisation mechanisms. 
+
+The optimisation mechanism are of note and are discussed in greater detail in section \ref{sec:implementation_optimisation}. 
+
+\section{Operational Semantics to Code}
+A basic implementation of Kihi is straight forward. An almost direct translation of the operational semantics presented in figure \ref{fig:term_rewriting_op_sem} and figure \ref{fig:stack_op_sem} is possible as shown by the pseudocode in figure \ref{fig:term_rewriting_pseudocode} and figure \ref{fig:stack_pseudocode}. Furthermore, the pseudocode in the figures are an accurate representation of the respective implementations avaliable in the actual binary.
+
+
+
+this was the approach taken for the initial implementations. The appendix provides commit hashes for particularly noteworthy implementations, however the latest commit provides backwards compatibility to run later editions for benchmarking and prosperity's sake.
+
+The language
+
+\todo[inline]{wordy wtf change this.}
+
+
+
+\section{Language Choice}
+
+\section{Optimisation}\label{sec:implementation_optimisation}
+There were two primary optimisations implemented in the Kihi virtual
+machine. Firstly, symbolic analysis: finding commonly occuring or
+meaningful sequences of terms, and secondly symbol optimisation: the
+process of dynamically constructing a more efficient method of executing
+a symbol. 
+
+\subsection{Symbolic Analysis}
+\todo[inline]{Find reference probably simmilar idea exists in lit}
+The Kihi virtual machine implements a relatively simple symbol analyser.
+The base symbolic analyser combines adjacent operators into symbols. The
+motivation behind this method
+
+\section{Execution Style}
+
+
+\section{Benchmark Suite}
+
+\input{figures/04_implementation/term_rewriting_pseudocode}
+\input{figures/04_implementation/stack_pseudocode}

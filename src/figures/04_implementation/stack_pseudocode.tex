@@ -13,7 +13,7 @@ execute_program(input: String):
         else if term is 'left' => {
             arg1 = stack.pop()
             arg2 = stack.pop()
-            stack.push( [arg2] ++ arg2 )
+            stack.push( ((arg2) : arg1) )
         }
         ... and so on for each inference rule
     }
