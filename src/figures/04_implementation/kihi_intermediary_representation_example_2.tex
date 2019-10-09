@@ -1,0 +1,59 @@
+\tikzstyle{symbol} = [rectangle, minimum width=2.8cm, minimum height=1cm, text centered, draw=black]
+
+\begin{figure}[htb]
+    \centering
+    \begin{tikzpicture}[node distance=2.5cm]
+        \node (program) [program];
+        \node (2) [abstraction, below left of=program];
+        \node (3) [abstraction, below right of=program];
+        \node (1) [symbol, left of=2, xshift=-1cm] {Symbol 0};
+        \node (4) [abstraction, right of=3, xshift=1cm];
+
+        \node (2c) [symbol, below of=2, yshift=0.6cm] {Symbol 6};
+        \node (3c) [symbol, below of=3, yshift=0.6cm] {Symbol 13};
+        \node (4c) [symbol, below of=4, yshift=0.6cm] {Symbol 14};
+
+        \draw [arrow] (program) -- (1);
+        \draw [arrow] (program) -- (2);
+        \draw [arrow] (program) -- (3);
+        \draw [arrow] (program) -- (4);
+
+        \draw [arrow] (2) -- (2c);
+        \draw [arrow] (3) -- (3c);
+        \draw [arrow] (4) -- (4c);
+    \end{tikzpicture}
+\vspace*{1cm}
+
+\begin{tikzpicture}[cell/.style={rectangle,draw=black},
+space/.style={
+        minimum height=1.5em,matrix of nodes,row sep=-\pgflinewidth,column sep=-\pgflinewidth,
+        column 1/.style={font=\ttfamily}
+    },
+    text depth=0.5ex,text height=2ex,nodes in empty cells]
+
+\matrix (first) [space, 
+    column 1/.style={nodes={cell, minimum width=1.5cm}},
+    column 2/.style={nodes={cell, minimum width=12cm}}
+] {
+Symbol   & Terms \\
+0   & apply right copy right \\
+1   & apply apply left \\  
+2   & right right \\  
+3   & apply \\  
+4   & copy \\  
+5   & symbol\_2 (symbol\_3) symbol\_4 \\  
+6   & symbol\_1 (symbol\_5) \\  
+7   & apply left \\  
+8   & apply apply left left \\  
+9   & symbol\_8 () \\  
+10   & copy right  \\  
+11   & apply left left \\  
+12   & symbol\_1 (symbol\_3) symbol\_11 () symbol\_7 (symbol\_4) \\   
+13   & symbol\_7 (symbol\_9) symbol\_10 (symbol\_12) symbol\_11 () \\   
+14   & drop \\  
+};
+
+\end{tikzpicture}
+    \caption{Kihi Intermediary Representation}
+    \label{fig:kihi_intermediary_representation}
+\end{figure}

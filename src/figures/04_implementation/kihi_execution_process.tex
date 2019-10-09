@@ -1,0 +1,24 @@
+\tikzstyle{startstop} = [rectangle, rounded corners, minimum width=3cm, minimum height=1cm,text centered, draw=black, fill=red!30]
+\tikzstyle{io} = [trapezium, trapezium left angle=70, trapezium right angle=110, minimum width=3cm, minimum height=1cm, text centered, draw=black, fill=blue!30]
+\tikzstyle{process} = [rectangle, minimum width=3cm, minimum height=1cm, text centered, draw=black, fill=orange!30]
+\tikzstyle{decision} = [diamond, minimum width=3cm, minimum height=1cm, text centered, draw=black, fill=green!30]
+\tikzstyle{arrow} = [thick,->,>=stealth]
+
+\tikzstyle{plain_box} = [rectangle, minimum width=5cm, minimum height=1.2cm, text width=4cm, text centered, draw=black]
+\begin{figure}[htb]
+    \centering
+    \begin{tikzpicture}[node distance=2.6cm]
+        \node (source) [plain_box] {Source Code};
+        \node (intermediary) [plain_box, below of=source] {Intermediary Representation};
+        \node (intermediary_1) [plain_box, below of=intermediary] {Intermediary with Symbols};
+        \node (intermediary_2) [plain_box, below of=intermediary_1] {Intermediary with Optimised Symbols};
+        \node (execution) [plain_box, below of=intermediary_2] {Program Output};
+
+        \draw [arrow] (source) -- node[anchor=west] {Parse} (intermediary);
+        \draw [arrow] (intermediary) -- node[anchor=west] {Symbol Detection} (intermediary_1);
+        \draw [arrow] (intermediary_1) -- node[anchor=west] {Symbol Optimisation} (intermediary_2);
+        \draw [arrow] (intermediary_2) -- node[anchor=west] {Execution} (execution);
+    \end{tikzpicture}
+    \caption{How a Kihi program is executed.}
+    \label{fig:kihi_intermediary_representation}
+\end{figure}
