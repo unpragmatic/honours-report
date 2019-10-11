@@ -1,0 +1,63 @@
+This is BibTeX, Version 0.99d (TeX Live 2019 - CLR Linux)
+Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
+The top-level auxiliary file: main.aux
+A level-1 auxiliary file: 00a_abstract.aux
+A level-1 auxiliary file: 00b_acknowledge.aux
+A level-1 auxiliary file: 01_introduction.aux
+A level-1 auxiliary file: 02_background.aux
+A level-1 auxiliary file: 03_implementation.aux
+A level-1 auxiliary file: 04_results.aux
+A level-1 auxiliary file: 06_conclusion.aux
+The style file: acm.bst
+Database file #1: sample.bib
+Illegal end of database file---line 2011 of file sample.bib
+ : volume
+ :       
+I'm skipping whatever remains of this entry
+Warning--empty publisher in Sh:88r
+Warning--empty year in Sh:88r
+Warning--empty chapter and pages in Sh:88r
+Warning--empty year in Sh:161
+Warning--empty journal in Sh:87
+You've used 167 entries,
+            2253 wiz_defined-function locations,
+            1409 strings with 22513 characters,
+and the built_in function-call counts, 53020 in all, are:
+= -- 5684
+> -- 1574
+< -- 0
++ -- 663
+- -- 496
+* -- 4145
+:= -- 8383
+add.period$ -- 541
+call.type$ -- 167
+change.case$ -- 748
+chr.to.int$ -- 0
+cite$ -- 172
+duplicate$ -- 1772
+empty$ -- 4704
+format.name$ -- 496
+if$ -- 11167
+int.to.chr$ -- 0
+int.to.str$ -- 167
+missing$ -- 168
+newline$ -- 860
+num.names$ -- 334
+pop$ -- 478
+preamble$ -- 1
+purify$ -- 582
+quote$ -- 0
+skip$ -- 1079
+stack$ -- 0
+substring$ -- 4862
+swap$ -- 488
+text.length$ -- 0
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 666
+warning$ -- 5
+while$ -- 681
+width$ -- 170
+write$ -- 1767
+(There was 1 error message)

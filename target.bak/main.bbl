@@ -1,0 +1,963 @@
+\begin{thebibliography}{100}
+
+\bibitem{ARSh:153}
+{\sc Abraham, U., Rubin, M., and Shelah, S.}
+\newblock {On the consistency of some partition theorems for continuous
+  colorings, and the structure of $\aleph_ 1$-dense real order types}.
+\newblock {\em Annals of Pure and Applied Logic 29\/} (1985), 123--206.
+
+\bibitem{AbSh:146}
+{\sc Abraham, U., and Shelah, S.}
+\newblock {Forcing closed unbounded sets}.
+\newblock {\em The Journal of Symbolic Logic 48\/} (1983), 643--657.
+
+\bibitem{AbSh:114}
+{\sc Abraham, U., and Shelah, S.}
+\newblock {Isomorphism types of Aronszajn trees}.
+\newblock {\em Israel Journal of Mathematics 50\/} (1985), 75--113.
+
+\bibitem{AmSh:57}
+{\sc Amit, R., and Shelah, S.}
+\newblock {The complete finitely axiomatized theories of order are dense}.
+\newblock {\em Israel Journal of Mathematics 23\/} (1976), 200--208.
+
+\bibitem{ADSh:81}
+{\sc Avraham~(Abraham), U., Devlin, K.~J., and Shelah, S.}
+\newblock {The consistency with CH of some consequences of Martin's axiom plus
+  $2^{\aleph _{0}}>\aleph _{1}$}.
+\newblock {\em Israel Journal of Mathematics 31\/} (1978), 19--33.
+
+\bibitem{AbSh:106}
+{\sc Avraham~(Abraham), U., and Shelah, S.}
+\newblock {Martin's axiom does not imply that every two $\aleph _{1}$-dense
+  sets of reals are isomorphic}.
+\newblock {\em Israel Journal of Mathematics 38\/} (1981), 161--176.
+
+\bibitem{AbSh:102}
+{\sc Avraham~(Abraham), U., and Shelah, S.}
+\newblock {Forcing with stable posets}.
+\newblock {\em The Journal of Symbolic Logic 47\/} (1982), 37--42.
+
+\bibitem{BlSh:142}
+{\sc Baldwin, J.~T., and Shelah, S.}
+\newblock {The structure of saturated free algebras}.
+\newblock {\em Algebra Universalis 17\/} (1983), 191--199.
+\newblock A volume in honour of Tarski.
+
+\bibitem{BlSh:156}
+{\sc Baldwin, J.~T., and Shelah, S.}
+\newblock {Second-order quantifiers and the complexity of theories}.
+\newblock {\em Notre Dame Journal of Formal Logic 26\/} (1985), 229--303.
+\newblock Proceedings of the 1980/1 Jerusalem Model Theory year.
+
+\bibitem{ChSh:115}
+{\sc Cherlin, G., and Shelah, S.}
+\newblock {Superstable fields and groups}.
+\newblock {\em Annals of Mathematical Logic 18\/} (1980), 227--270.
+
+\bibitem{DvSh:65}
+{\sc Devlin, K.~J., and Shelah, S.}
+\newblock {A weak version of $\diamondsuit $ which follows from $2^{\aleph
+  _{0}}<2^{\aleph _{1}}$}.
+\newblock {\em Israel Journal of Mathematics 29\/} (1978), 239--247.
+
+\bibitem{DvSh:85}
+{\sc Devlin, K.~J., and Shelah, S.}
+\newblock {A note on the normal Moore space conjecture}.
+\newblock {\em Canadian Journal of Mathematics. Journal Canadien de
+  Mathematiques 31\/} (1979), 241--251.
+
+\bibitem{DvSh:86}
+{\sc Devlin, K.~J., and Shelah, S.}
+\newblock {Souslin properties and tree topologies}.
+\newblock {\em Proceedings of the London Mathematical Society. Third Series
+  39\/} (1979), 237--252.
+
+\bibitem{EMSh:145}
+{\sc Eklof, P.~C., Mekler, A.~H., and Shelah, S.}
+\newblock {Almost disjoint abelian groups}.
+\newblock {\em Israel Journal of Mathematics 49\/} (1984), 34--54.
+\newblock Proceedings of the 1980/1 Jerusalem Model Theory year.
+
+\bibitem{EHSh:32}
+{\sc Erdos, P., Hajnal, A., and Shelah, S.}
+\newblock {On some general properties of chromatic numbers}.
+\newblock In {\em Topics in topology (Proc. Colloq., Keszthely, 1972)}, vol.~8
+  of {\em Colloq. Math. Soc. Janos Bolyai}. North-Holland, Amsterdam, 1974,
+  pp.~243--255.
+
+\bibitem{ErSh:21}
+{\sc Erdos, P., and Shelah, S.}
+\newblock {On problems of Moser and Hanson}.
+\newblock In {\em Graph theory and applications (Proc. Conf., Western Michigan
+  Univ., Kalamazoo, Mich., 1972; dedicated to the memory of J. W. T. Youngs)},
+  vol.~303 of {\em Lecture Notes in Mathematics}. Springer, Berlin, 1972,
+  pp.~75--79.
+
+\bibitem{ErSh:19}
+{\sc Erdos, P., and Shelah, S.}
+\newblock {Separability properties of almost-disjoint families of sets}.
+\newblock {\em Israel Journal of Mathematics 12\/} (1972), 207--214.
+
+\bibitem{FrSh:103}
+{\sc Fremlin, D.~H., and Shelah, S.}
+\newblock {On partitions of the real line}.
+\newblock {\em Israel Journal of Mathematics 32\/} (1979), 299--304.
+
+\bibitem{FdSh:149}
+{\sc Friedman, S.~D., and Shelah, S.}
+\newblock {Tall $\alpha $-recursive structures}.
+\newblock {\em Proceedings of the American Mathematical Society 88\/} (1983),
+  672--678.
+
+\bibitem{GPShS:134}
+{\sc Gabbay, D., Pnueli, A., Shelah, S., and Stavi, J.}
+\newblock {On the temporal analysis of fairness}.
+\newblock In {\em Proc.~of the seventh Annual SIG ACT --- SIG PLAN Symposium on
+  Principles of Programming Languages, January 23- 30, 1980}. Association Comp.
+  Machinery, NY, 1980, pp.~163--173.
+
+\bibitem{GlSh:23}
+{\sc Galvin, F., and Shelah, S.}
+\newblock {Some Counterexamples in the Partition Calculus}.
+\newblock {\em Journal of Combinatorial Theory. Ser. A 15\/} (1973), 167--174.
+
+\bibitem{GgSh:83}
+{\sc Giorgetta, D., and Shelah, S.}
+\newblock {Existentially closed structures in the power of the continuum}.
+\newblock {\em Annals of Pure and Applied Logic 26\/} (1984), 123--148.
+\newblock Proceedings of the 1980/1 Jerusalem Model Theory year.
+
+\bibitem{GGHSh:135}
+{\sc Glass, A. M.~W., Gurevich, Y., Holland, W.~C., and Shelah, S.}
+\newblock {Rigid homogeneous chains}.
+\newblock {\em Mathematical Proceedings of the Cambridge Philosophical Society
+  89\/} (1981), 7--17.
+
+\bibitem{GMSh:141}
+{\sc Gurevich, Y., Magidor, M., and Shelah, S.}
+\newblock {The monadic theory of $\omega _{2}$}.
+\newblock {\em The Journal of Symbolic Logic 48\/} (1983), 387--398.
+
+\bibitem{GuSh:70}
+{\sc Gurevich, Y., and Shelah, S.}
+\newblock {Modest theory of short chains. II}.
+\newblock {\em The Journal of Symbolic Logic 44\/} (1979), 491--502.
+
+\bibitem{GuSh:123}
+{\sc Gurevich, Y., and Shelah, S.}
+\newblock {Monadic theory of order and topology in ${\rm ZFC}$}.
+\newblock {\em Annals of Mathematical Logic 23\/} (1982), 179--198.
+
+\bibitem{GuSh:151}
+{\sc Gurevich, Y., and Shelah, S.}
+\newblock {Interpreting second-order logic in the monadic theory of order}.
+\newblock {\em The Journal of Symbolic Logic 48\/} (1983), 816--828.
+
+\bibitem{GuSh:143}
+{\sc Gurevich, Y., and Shelah, S.}
+\newblock {The monadic theory and the ``next world''}.
+\newblock {\em Israel Journal of Mathematics 49\/} (1984), 55--68.
+\newblock Proceedings of the 1980/1 Jerusalem Model Theory year.
+
+\bibitem{HrSh:152}
+{\sc Harrington, L., and Shelah, S.}
+\newblock {Counting equivalence classes for co-$\kappa $-Souslin equivalence
+  relations}.
+\newblock In {\em Logic Colloquium '80 (Prague, 1980)}, vol.~108 of {\em Stud.
+  Logic Foundations Math}. North-Holland, Amsterdam-New York, 1982,
+  pp.~147--152.
+\newblock eds. van Dalen, ~D., Lascar, D. and Smiley, T.J.
+
+\bibitem{HrSh:147}
+{\sc Harrington, L., and Shelah, S.}
+\newblock {The undecidability of the recursively enumerable degrees}.
+\newblock {\em American Mathematical Society. Bulletin. New Series 6\/} (1982),
+  79--80.
+
+\bibitem{HrSh:99}
+{\sc Harrington, L., and Shelah, S.}
+\newblock {Some exact equiconsistency results in set theory}.
+\newblock {\em Notre Dame Journal of Formal Logic 26\/} (1985), 178--188.
+\newblock Proceedings of the 1980/1 Jerusalem Model Theory year.
+
+\bibitem{HHSh:91}
+{\sc Hiller, H.~L., Huber, M., and Shelah, S.}
+\newblock {The structure of ${\rm Ext}(A, {\bf Z})$ and $V=L$}.
+\newblock {\em Mathematische Zeitschrift 162\/} (1978), 39--50.
+
+\bibitem{HiSh:59}
+{\sc Hiller, H.~L., and Shelah, S.}
+\newblock {Singular cohomology in $L$}.
+\newblock {\em Israel Journal of Mathematics 26\/} (1977), 313--319.
+
+\bibitem{HLSh:60}
+{\sc Hodges, W., Lachlan, A.~H., and Shelah, S.}
+\newblock {Possible orderings of an indiscernible sequence}.
+\newblock {\em Bulletin of the London Mathematical Society 9\/} (1977),
+  212--215.
+
+\bibitem{HoSh:109}
+{\sc Hodges, W., and Shelah, S.}
+\newblock {Infinite games and reduced products}.
+\newblock {\em Annals of Mathematical Logic 20\/} (1981), 77--108.
+
+\bibitem{HoSh:160}
+{\sc Hodges, W., and Shelah, S.}
+\newblock {Naturality and definability. I}.
+\newblock {\em Journal of the London Mathematical Society. Second Series 33\/}
+  (1986), 1--12.
+
+\bibitem{LaSh:157}
+{\sc Lachlan, A.~H., and Shelah, S.}
+\newblock {Stable structures homogeneous for a finite binary language}.
+\newblock {\em Israel Journal of Mathematics 49\/} (1984), 155--180.
+\newblock Proceedings of the 1980/1 Jerusalem Model Theory year.
+
+\bibitem{LvSh:104}
+{\sc Laver, R., and Shelah, S.}
+\newblock {The $\aleph _{2}$-Souslin Hypothesis}.
+\newblock {\em Transactions of the American Mathematical Society 264\/} (1981),
+  411--417.
+
+\bibitem{LtSh:53}
+{\sc Litman, A., and Shelah, S.}
+\newblock {Models with few isomorphic expansions}.
+\newblock {\em Israel Journal of Mathematics 28\/} (1977), 331--338.
+
+\bibitem{McSh:55}
+{\sc Macintyre, A., and Shelah, S.}
+\newblock {Uncountable universal locally finite groups}.
+\newblock {\em Journal of Algebra 43\/} (1976), 168--175.
+
+\bibitem{MShS:121}
+{\sc Magidor, M., Shelah, S., and Stavi, J.}
+\newblock {On the standard part of nonstandard models of set theory}.
+\newblock {\em The Journal of Symbolic Logic 48\/} (1983), 33--38.
+
+\bibitem{MShS:144}
+{\sc Magidor, M., Shelah, S., and Stavi, J.}
+\newblock {Countably decomposable admissible sets}.
+\newblock {\em Annals of Pure and Applied Logic 26\/} (1984), 287--361.
+\newblock Proceedings of the 1980/1 Jerusalem Model Theory year.
+
+\bibitem{MwSh:62}
+{\sc Makowsky, J.~A., and Shelah, S.}
+\newblock {The theorems of Beth and Craig in abstract model theory. I. The
+  abstract setting}.
+\newblock {\em Transactions of the American Mathematical Society 256\/} (1979),
+  215--239.
+
+\bibitem{MwSh:101}
+{\sc Makowsky, J.~A., and Shelah, S.}
+\newblock {The theorems of Beth and Craig in abstract model theory. II. Compact
+  logics}.
+\newblock {\em Archiv fur Mathematische Logik und Grundlagenforschung 21\/}
+  (1981), 13--35.
+\newblock Proceedings of a Workshop, Berlin, July 1977.
+
+\bibitem{MwSh:116}
+{\sc Makowsky, J.~A., and Shelah, S.}
+\newblock {Positive results in abstract model theory: a theory of compact
+  logics}.
+\newblock {\em Annals of Pure and Applied Logic 25\/} (1983), 263--299.
+
+\bibitem{MShS:47}
+{\sc Makowsky, J.~A., Shelah, S., and Stavi, J.}
+\newblock {$\Delta$-logics and generalized quantifiers}.
+\newblock {\em Annals of Mathematical Logic 10\/} (1976), 155--192.
+
+\bibitem{MzSh:30}
+{\sc McKenzie, R., and Shelah, S.}
+\newblock {The cardinals of simple models for universal theories}.
+\newblock In {\em Proceedings of the Tarski Symposium (Univ. California,
+  Berkeley, Calif., 1971)}, vol.~XXV of {\em Proc. Sympos. Pure Math.} Amer.
+  Math. Soc., Providence, R.I, 1974, pp.~53--74.
+
+\bibitem{MlSh:35}
+{\sc Milner, E.~C., and Shelah, S.}
+\newblock {Sufficiency conditions for the existence of transversals}.
+\newblock {\em Canadian Journal of Mathematics. Journal Canadien de
+  Mathematiques 26\/} (1974), 948--961.
+
+\bibitem{MlSh:41}
+{\sc Milner, E.~C., and Shelah, S.}
+\newblock {Some theorems on transversals}.
+\newblock In {\em Infinite and finite sets (Colloq., Keszthely, 1973; dedicated
+  to P. Erd\H{o}s on his 60th birthday)}, vol.~10 (III) of {\em Colloq. Math.
+  Soc. Janos Bolyai}. North Holland, Amsterdam, 1975, pp.~1115--1126.
+
+\bibitem{MoSh:27}
+{\sc Moran, G., and Shelah, S.}
+\newblock {Size direction games over the real line. III}.
+\newblock {\em Israel Journal of Mathematics 14\/} (1973), 442--449.
+
+\bibitem{PiSh:130}
+{\sc Pillay, A., and Shelah, S.}
+\newblock {Classification theory over a predicate. I}.
+\newblock {\em Notre Dame Journal of Formal Logic 26\/} (1985), 361--376.
+
+\bibitem{RuSh:84}
+{\sc Rubin, M., and Shelah, S.}
+\newblock {On the elementary equivalence of automorphism groups of Boolean
+  algebras; downward Skolem-Lowenheim theorems and compactness of related
+  quantifiers}.
+\newblock {\em The Journal of Symbolic Logic 45\/} (1980), 265--283.
+
+\bibitem{RuSh:118}
+{\sc Rubin, M., and Shelah, S.}
+\newblock {On the expressibility hierarchy of Magidor-Malitz quantifiers}.
+\newblock {\em The Journal of Symbolic Logic 48\/} (1983), 542--557.
+
+\bibitem{RuSh:117}
+{\sc Rubin, M., and Shelah, S.}
+\newblock {Combinatorial problems on trees: partitions, $\Delta$-systems and
+  large free subtrees}.
+\newblock {\em Annals of Pure and Applied Logic 33\/} (1987), 43--81.
+
+\bibitem{SgSh:148}
+{\sc Sageev, G., and Shelah, S.}
+\newblock {Weak compactness and the structure of {\rm Ext}$(A,\,{\bf Z})$}.
+\newblock In {\em Abelian group theory (Oberwolfach, 1981)}, vol.~874 of {\em
+  Lecture Notes in Mathematics}. Springer, Berlin-New York, 1981, pp.~87--92.
+\newblock ed. Goebel, R. and Walker, A.E.
+
+\bibitem{SgSh:138}
+{\sc Sageev, G., and Shelah, S.}
+\newblock {On the structure of ${\rm Ext}(A,{\bf Z})$ in ${\rm ZFC}^ +$}.
+\newblock {\em The Journal of Symbolic Logic 50\/} (1985), 302--315.
+
+\bibitem{ScSh:20}
+{\sc Schmerl, J.~H., and Shelah, S.}
+\newblock {On power-like models for hyperinaccessible cardinals}.
+\newblock {\em Journal of Symbolic Logic 37\/} (1972), 531--537.
+
+\bibitem{Sh:88r}
+{\sc Shelah, S.}
+\newblock {\em {Abstract elementary classes near $\aleph_1$}}.
+\newblock Chapter I. 0705.4137. arxiv:0705.4137.
+
+\bibitem{Sh:161}
+{\sc Shelah, S.}
+\newblock {Incompactness in regular cardinals}.
+\newblock {\em Notre Dame Journal of Formal Logic\/}, 195--228.
+
+\bibitem{Sh:87}
+{\sc Shelah, S.}
+\newblock {See [Sh:87a] and [Sh:87b]}.
+
+\bibitem{Sh:2}
+{\sc Shelah, S.}
+\newblock {Note on a min-max problem of Leo Moser}.
+\newblock {\em Journal of Combinatorial Theory 6\/} (1969), 298--300.
+
+\bibitem{Sh:1}
+{\sc Shelah, S.}
+\newblock {Stable theories}.
+\newblock {\em Israel Journal of Mathematics 7\/} (1969), 187--202.
+
+\bibitem{Sh:6}
+{\sc Shelah, S.}
+\newblock {A note on Hanf numbers}.
+\newblock {\em Pacific Journal of Mathematics 34\/} (1970), 541--545.
+
+\bibitem{Sh:3}
+{\sc Shelah, S.}
+\newblock {Finite diagrams stable in power}.
+\newblock {\em Annals of Mathematical Logic 2\/} (1970), 69--118.
+
+\bibitem{Sh:5}
+{\sc Shelah, S.}
+\newblock {On languages with non-homogeneous strings of quantifiers}.
+\newblock {\em Israel Journal of Mathematics 8\/} (1970), 75--79.
+
+\bibitem{Sh:7}
+{\sc Shelah, S.}
+\newblock {On the cardinality of ultraproduct of finite sets}.
+\newblock {\em Journal of Symbolic Logic 35\/} (1970), 83--84.
+
+\bibitem{Sh:4}
+{\sc Shelah, S.}
+\newblock {On theories $T$ categorical in $|T|$}.
+\newblock {\em Journal of Symbolic Logic 35\/} (1970), 73--82.
+
+\bibitem{Sh:9}
+{\sc Shelah, S.}
+\newblock {Remark to ``local definability theory'' of Reyes}.
+\newblock {\em Annals of Mathematical Logic 2\/} (1970), 441--447.
+
+\bibitem{Sh:13}
+{\sc Shelah, S.}
+\newblock {Every two elementarily equivalent models have isomorphic
+  ultrapowers}.
+\newblock {\em Israel Journal of Mathematics 10\/} (1971), 224--233.
+
+\bibitem{Sh:11}
+{\sc Shelah, S.}
+\newblock {On the number of non-almost isomorphic models of $T$ in a power}.
+\newblock {\em Pacific Journal of Mathematics 36\/} (1971), 811--818.
+
+\bibitem{Sh:10}
+{\sc Shelah, S.}
+\newblock {Stability, the f.c.p., and superstability; model theoretic
+  properties of formulas in first order theory}.
+\newblock {\em Annals of Mathematical Logic 3\/} (1971), 271--362.
+
+\bibitem{Sh:12}
+{\sc Shelah, S.}
+\newblock {The number of non-isomorphic models of an unstable first-order
+  theory}.
+\newblock {\em Israel Journal of Mathematics 9\/} (1971), 473--487.
+
+\bibitem{Sh:8}
+{\sc Shelah, S.}
+\newblock {Two cardinal compactness}.
+\newblock {\em Israel Journal of Mathematics 9\/} (1971), 193--198.
+
+\bibitem{Sh:16}
+{\sc Shelah, S.}
+\newblock {A combinatorial problem; stability and order for models and theories
+  in infinitary languages}.
+\newblock {\em Pacific Journal of Mathematics 41\/} (1972), 247--261.
+
+\bibitem{Sh:22}
+{\sc Shelah, S.}
+\newblock {A note on model complete models and generic models}.
+\newblock {\em Proceedings of the American Mathematical Society 34\/} (1972),
+  509--514.
+
+\bibitem{Sh:17}
+{\sc Shelah, S.}
+\newblock {For what filters is every reduced product saturated?}
+\newblock {\em Israel Journal of Mathematics 12\/} (1972), 23--31.
+
+\bibitem{Sh:18}
+{\sc Shelah, S.}
+\newblock {On models with power-like orderings}.
+\newblock {\em Journal of Symbolic Logic 37\/} (1972), 247--267.
+
+\bibitem{Sh:14}
+{\sc Shelah, S.}
+\newblock {Saturation of ultrapowers and Keisler's order}.
+\newblock {\em Annals of Mathematical Logic 4\/} (1972), 75--114.
+
+\bibitem{Sh:15}
+{\sc Shelah, S.}
+\newblock {Uniqueness and characterization of prime models over sets for
+  totally transcendental first-order theories}.
+\newblock {\em Journal of Symbolic Logic 37\/} (1972), 107--113.
+
+\bibitem{Sh:39}
+{\sc Shelah, S.}
+\newblock {Differentially closed fields}.
+\newblock {\em Israel Journal of Mathematics 16\/} (1973), 314--328.
+
+\bibitem{Sh:25}
+{\sc Shelah, S.}
+\newblock {Errata to: First order theory of permutation groups}.
+\newblock {\em Israel Journal of Mathematics 15\/} (1973), 437--441.
+
+\bibitem{Sh:24}
+{\sc Shelah, S.}
+\newblock {First order theory of permutation groups}.
+\newblock {\em Israel Journal of Mathematics 14\/} (1973), 149--162.
+
+\bibitem{Sh:26}
+{\sc Shelah, S.}
+\newblock {Notes on combinatorial set theory}.
+\newblock {\em Israel Journal of Mathematics 14\/} (1973), 262--277.
+
+\bibitem{Sh:28}
+{\sc Shelah, S.}
+\newblock {There are just four second-order quantifiers}.
+\newblock {\em Israel Journal of Mathematics 15\/} (1973), 282--300.
+
+\bibitem{Sh:34}
+{\sc Shelah, S.}
+\newblock {Weak definability in infinitary languages}.
+\newblock {\em Journal of Symbolic Logic 38\/} (1973), 399--404.
+
+\bibitem{Sh:29}
+{\sc Shelah, S.}
+\newblock {A substitute for Hall's theorem for families with infinite sets}.
+\newblock {\em Journal of Combinatorial Theory. Ser. A 16\/} (1974), 199--208.
+
+\bibitem{Sh:31}
+{\sc Shelah, S.}
+\newblock {Categoricity of uncountable theories}.
+\newblock In {\em Proceedings of the Tarski Symposium (Univ. of California,
+  Berkeley, Calif., 1971)}, vol.~XXV of {\em Proc. Sympos. Pure Math.} Amer.
+  Math. Soc., Providence, R.I, 1974, pp.~187--203.
+
+\bibitem{Sh:44}
+{\sc Shelah, S.}
+\newblock {Infinite abelian groups, Whitehead problem and some constructions}.
+\newblock {\em Israel Journal of Mathematics 18\/} (1974), 243--256.
+
+\bibitem{Sh:33}
+{\sc Shelah, S.}
+\newblock {The Hanf number of omitting complete types}.
+\newblock {\em Pacific Journal of Mathematics 50\/} (1974), 163--168.
+
+\bibitem{Sh:51}
+{\sc Shelah, S.}
+\newblock {Why there are many nonisomorphic models for unsuperstable theories}.
+\newblock In {\em Proceedings of the International Congress of Mathematicians
+  (Vancouver, B. C., 1974)}, vol.~1. Canad. Math. Congress, Montreal, Que,
+  1974, pp.~259--263.
+
+\bibitem{Sh:52}
+{\sc Shelah, S.}
+\newblock {A compactness theorem for singular cardinals, free algebras,
+  Whitehead problem and transversals}.
+\newblock {\em Israel Journal of Mathematics 21\/} (1975), 319--349.
+
+\bibitem{Sh:37}
+{\sc Shelah, S.}
+\newblock {A two-cardinal theorem}.
+\newblock {\em Proceedings of the American Mathematical Society 48\/} (1975),
+  207--213.
+
+\bibitem{Sh:48}
+{\sc Shelah, S.}
+\newblock {Categoricity in $\aleph _{1}$ of sentences in $L_{\omega
+  _{1},\omega}(Q)$}.
+\newblock {\em Israel Journal of Mathematics 20\/} (1975), 127--148.
+
+\bibitem{Sh:46}
+{\sc Shelah, S.}
+\newblock {Colouring without triangles and partition relation}.
+\newblock {\em Israel Journal of Mathematics 20\/} (1975), 1--12.
+
+\bibitem{Sh:45}
+{\sc Shelah, S.}
+\newblock {Existence of rigid-like families of abelian $p$-groups}.
+\newblock In {\em Model theory and algebra (A memorial tribute to Abraham
+  Robinson)}, vol.~498 of {\em Lecture Notes in Math.} Springer, Berlin, 1975,
+  pp.~384--402.
+
+\bibitem{Sh:43}
+{\sc Shelah, S.}
+\newblock {Generalized quantifiers and compact logic}.
+\newblock {\em Transactions of the American Mathematical Society 204\/} (1975),
+  342--364.
+
+\bibitem{Sh:38}
+{\sc Shelah, S.}
+\newblock {Graphs with prescribed asymmetry and minimal number of edges}.
+\newblock In {\em Infinite and finite sets (Colloq., Keszthely, 1973; dedicated
+  to P. Erd\H{o}s on his 60th birthday)}, vol.~10 (III) of {\em Colloq. Math.
+  Soc. Janos Bolyai}. North-Holland, Amsterdam, 1975, pp.~1241--1256.
+
+\bibitem{Sh:40}
+{\sc Shelah, S.}
+\newblock {Notes on partition calculus}.
+\newblock In {\em Infinite and finite sets (Colloq., Keszthely, 1973; dedicated
+  to P. Erd\H{o}s on his 60th birthday)}, vol.~10 (III) of {\em Colloq. Math.
+  Soc. Janos Bolyai}. North-Holland, Amsterdam, 1975, pp.~1257--1276.
+
+\bibitem{Sh:54}
+{\sc Shelah, S.}
+\newblock {The lazy model-theoretician's guide to stability}.
+\newblock {\em Logique et Analyse 18\/} (1975), 241--308.
+\newblock Comptes Rendus de la Semaine d'Etude en Theorie des Modeles (Inst.
+  Math., Univ. Catholique Louvain, Louvain-la-Neuve, 1975).
+
+\bibitem{Sh:42}
+{\sc Shelah, S.}
+\newblock {The monadic theory of order}.
+\newblock {\em Annals of Mathematics 102\/} (1975), 379--419.
+
+\bibitem{Sh:50}
+{\sc Shelah, S.}
+\newblock {Decomposing uncountable squares to countably many chains}.
+\newblock {\em Journal of Combinatorial Theory. Ser. A 21\/} (1976), 110--114.
+
+\bibitem{Sh:61}
+{\sc Shelah, S.}
+\newblock {Interpreting set theory in the endomorphism semi-group of a free
+  algebra or in a category}.
+\newblock {\em Ann. Sci. Univ. Clermont 13\/} (1976), 1--29.
+\newblock Proceedings of Symposium in Clermont-Ferand, July 1975.
+
+\bibitem{Sh:56}
+{\sc Shelah, S.}
+\newblock {Refuting Ehrenfeucht conjecture on rigid models}.
+\newblock {\em Israel Journal of Mathematics 25\/} (1976), 273--286.
+\newblock A special volume, Proceedings of the Symposium in memory of A.
+  Robinson, Yale, 1975.
+
+\bibitem{Sh:49}
+{\sc Shelah, S.}
+\newblock {A two-cardinal theorem and a combinatorial theorem}.
+\newblock {\em Proceedings of the American Mathematical Society 62\/} (1977),
+  134--136.
+
+\bibitem{Sh:58}
+{\sc Shelah, S.}
+\newblock {Decidability of a portion of the predicate calculus}.
+\newblock {\em Israel Journal of Mathematics 28\/} (1977), 32--44.
+
+\bibitem{Sh:77}
+{\sc Shelah, S.}
+\newblock {Existentially-closed groups in $\aleph _{1}$ with special
+  properties}.
+\newblock {\em Bulletin de la Societe Mathematique de Grece. Nouvelle Serie
+  18\/} (1977), 17--27.
+\newblock A special volume dedicated to the memory of Papakyriakopoulos.
+
+\bibitem{Sh:36}
+{\sc Shelah, S.}
+\newblock {Remarks on cardinal invariants in topology}.
+\newblock {\em General Topology and Applications 7\/} (1977), 251--259.
+
+\bibitem{Sh:90}
+{\sc Shelah, S.}
+\newblock {Remarks on $\lambda $-collectionwise Hausdorff spaces}.
+\newblock {\em Topology Proceedings 2\/} (1977), 583--592.
+\newblock Proceedings of the 1977 Topology Conference (Louisiana State Univ.,
+  Baton Rouge, La., 1977), II.
+
+\bibitem{Sh:64}
+{\sc Shelah, S.}
+\newblock {Whitehead groups may be not free, even assuming CH. I}.
+\newblock {\em Israel Journal of Mathematics 28\/} (1977), 193--204.
+
+\bibitem{Sh:75}
+{\sc Shelah, S.}
+\newblock {A Banach space with few operators}.
+\newblock {\em Israel Journal of Mathematics 30\/} (1978), 181--191.
+
+\bibitem{Sh:80}
+{\sc Shelah, S.}
+\newblock {A weak generalization of MA to higher cardinals}.
+\newblock {\em Israel Journal of Mathematics 30\/} (1978), 297--306.
+
+\bibitem{Sh:74}
+{\sc Shelah, S.}
+\newblock {Appendix to: ``Models with second-order properties. II. Trees with
+  no undefined branches'' (Annals of Mathematical Logic 14(1978), no. 1,
+  73--87)}.
+\newblock {\em Annals of Mathematical Logic 14\/} (1978), 223--226.
+
+\bibitem{Sh:66}
+{\sc Shelah, S.}
+\newblock {End extensions and numbers of countable models}.
+\newblock {\em The Journal of Symbolic Logic 43\/} (1978), 550--562.
+
+\bibitem{Sh:68}
+{\sc Shelah, S.}
+\newblock {Jonsson algebras in successor cardinals}.
+\newblock {\em Israel Journal of Mathematics 30\/} (1978), 57--64.
+
+\bibitem{Sh:72}
+{\sc Shelah, S.}
+\newblock {Models with second-order properties. I. Boolean algebras with no
+  definable automorphisms}.
+\newblock {\em Annals of Mathematical Logic 14\/} (1978), 57--72.
+
+\bibitem{Sh:73}
+{\sc Shelah, S.}
+\newblock {Models with second-order properties. II. Trees with no undefined
+  branches}.
+\newblock {\em Annals of Mathematical Logic 14\/} (1978), 73--87.
+
+\bibitem{Sh:67}
+{\sc Shelah, S.}
+\newblock {On the number of minimal models}.
+\newblock {\em Journal of Symbolic Logic 43\/} (1978), 475--480.
+
+\bibitem{Sh:54a}
+{\sc Shelah, S.}
+\newblock {The lazy model theorist's guide to stability}.
+\newblock In {\em Six days of model theory}, Proceedings of a conference in
+  Louvain-le-Neuve, March 1975. ed. P. Henrard, Paul Castella, Switzerland 1661
+  Albeuve, 1978, pp.~9--76.
+
+\bibitem{Sh:89}
+{\sc Shelah, S.}
+\newblock {Boolean algebras with few endomorphisms}.
+\newblock {\em Proceedings of the American Mathematical Society 74\/} (1979),
+  135--142.
+
+\bibitem{Sh:78}
+{\sc Shelah, S.}
+\newblock {Hanf number of omitting type for simple first-order theories}.
+\newblock {\em The Journal of Symbolic Logic 44\/} (1979), 319--324.
+
+\bibitem{Sh:108}
+{\sc Shelah, S.}
+\newblock {On successors of singular cardinals}.
+\newblock In {\em Logic Colloquium '78 (Mons, 1978)}, vol.~97 of {\em Stud.
+  Logic Foundations Math}. North-Holland, Amsterdam-New York, 1979,
+  pp.~357--380.
+
+\bibitem{Sh:105}
+{\sc Shelah, S.}
+\newblock {On uncountable abelian groups}.
+\newblock {\em Israel Journal of Mathematics 32\/} (1979), 311--330.
+
+\bibitem{Sh:79}
+{\sc Shelah, S.}
+\newblock {On uniqueness of prime models}.
+\newblock {\em The Journal of Symbolic Logic 44\/} (1979), 215--220.
+
+\bibitem{Sh:94}
+{\sc Shelah, S.}
+\newblock {Weakly compact cardinals: a combinatorial proof}.
+\newblock {\em The Journal of Symbolic Logic 44\/} (1979), 559--562.
+
+\bibitem{Sh:71}
+{\sc Shelah, S.}
+\newblock {A note on cardinal exponentiation}.
+\newblock {\em The Journal of Symbolic Logic 45\/} (1980), 56--66.
+
+\bibitem{Sh:76}
+{\sc Shelah, S.}
+\newblock {Independence of strong partition relation for small cardinals, and
+  the free-subset problem}.
+\newblock {\em The Journal of Symbolic Logic 45\/} (1980), 505--509.
+
+\bibitem{Sh:100}
+{\sc Shelah, S.}
+\newblock {Independence results}.
+\newblock {\em The Journal of Symbolic Logic 45\/} (1980), 563--573.
+
+\bibitem{Sh:69}
+{\sc Shelah, S.}
+\newblock {On a problem of Kurosh, Jonsson groups, and applications}.
+\newblock In {\em Word problems, II (Conf. on Decision Problems in Algebra,
+  Oxford, 1976)}, vol.~95 of {\em Studies in Logic and Foundations of
+  Mathematics}. North-Holland, Amsterdam-New York, 1980, pp.~373--394.
+
+\bibitem{Sh:92}
+{\sc Shelah, S.}
+\newblock {Remarks on Boolean algebras}.
+\newblock {\em Algebra Universalis 11\/} (1980), 77--89.
+
+\bibitem{Sh:93}
+{\sc Shelah, S.}
+\newblock {Simple unstable theories}.
+\newblock {\em Annals of Mathematical Logic 19\/} (1980), 177--203.
+
+\bibitem{Sh:98}
+{\sc Shelah, S.}
+\newblock {Whitehead groups may not be free, even assuming CH. II}.
+\newblock {\em Israel Journal of Mathematics 35\/} (1980), 257--285.
+
+\bibitem{Sh:124}
+{\sc Shelah, S.}
+\newblock {$\aleph _{\omega }$ may have a strong partition relation}.
+\newblock {\em Israel Journal of Mathematics 38\/} (1981), 283--288.
+
+\bibitem{Sh:95}
+{\sc Shelah, S.}
+\newblock {Canonization theorems and applications}.
+\newblock {\em The Journal of Symbolic Logic 46\/} (1981), 345--353.
+
+\bibitem{Sh:120}
+{\sc Shelah, S.}
+\newblock {Free limits of forcing and more on Aronszajn trees}.
+\newblock {\em Israel Journal of Mathematics 38\/} (1981), 315--334.
+
+\bibitem{Sh:119}
+{\sc Shelah, S.}
+\newblock {Iterated forcing and changing cofinalities}.
+\newblock {\em Israel Journal of Mathematics 40\/} (1981), 1--32.
+
+\bibitem{Sh:82}
+{\sc Shelah, S.}
+\newblock {Models with second order properties. III. Omitting types for
+  $L(Q)$}.
+\newblock {\em Archiv fur Mathematische Logik und Grundlagenforschung 21\/}
+  (1981), 1--11.
+
+\bibitem{Sh:140}
+{\sc Shelah, S.}
+\newblock {On endo-rigid, strongly $\aleph _{1}$-free abelian groups in $\aleph
+  _{1}$}.
+\newblock {\em Israel Journal of Mathematics 40\/} (1981), 291--295.
+
+\bibitem{Sh:122}
+{\sc Shelah, S.}
+\newblock {On Fleissner's diamond}.
+\newblock {\em Notre Dame Journal of Formal Logic 22\/} (1981), 29--35.
+
+\bibitem{Sh:126}
+{\sc Shelah, S.}
+\newblock {On saturation for a predicate}.
+\newblock {\em Notre Dame Journal of Formal Logic 22\/} (1981), 239--248.
+
+\bibitem{Sh:129}
+{\sc Shelah, S.}
+\newblock {On the number of nonisomorphic models of cardinality $\lambda$,
+  $L_{\infty \lambda }$-equivalent to a fixed model}.
+\newblock {\em Notre Dame Journal of Formal Logic 22\/} (1981), 5--10.
+
+\bibitem{Sh:127}
+{\sc Shelah, S.}
+\newblock {On uncountable Boolean algebras with no uncountable pairwise
+  comparable or incomparable sets of elements}.
+\newblock {\em Notre Dame Journal of Formal Logic 22\/} (1981), 301--308.
+
+\bibitem{Sh:125}
+{\sc Shelah, S.}
+\newblock {The consistency of ${\rm Ext}(G,\,{\bf Z})={\bf Q}$}.
+\newblock {\em Israel Journal of Mathematics 39\/} (1981), 74--82.
+
+\bibitem{Sh:110}
+{\sc Shelah, S.}
+\newblock {Better quasi-orders for uncountable cardinals}.
+\newblock {\em Israel Journal of Mathematics 42\/} (1982), 177--226.
+
+\bibitem{Sh:133}
+{\sc Shelah, S.}
+\newblock {On the number of nonisomorphic models in $L_{\infty ,\kappa }$ when
+  $\kappa $ is weakly compact}.
+\newblock {\em Notre Dame Journal of Formal Logic 23\/} (1982), 21--26.
+
+\bibitem{Sh:131}
+{\sc Shelah, S.}
+\newblock {The spectrum problem. I. $\aleph _{\varepsilon }$-saturated models,
+  the main gap}.
+\newblock {\em Israel Journal of Mathematics 43\/} (1982), 324--356.
+
+\bibitem{Sh:132}
+{\sc Shelah, S.}
+\newblock {The spectrum problem. II. Totally transcendental and infinite
+  depth}.
+\newblock {\em Israel Journal of Mathematics 43\/} (1982), 357--364.
+
+\bibitem{Sh:87a}
+{\sc Shelah, S.}
+\newblock {Classification theory for nonelementary classes, I. The number of
+  uncountable models of $\psi \in L_{\omega _{1},\omega }$. Part A}.
+\newblock {\em Israel Journal of Mathematics 46\/} (1983), 212--240.
+
+\bibitem{Sh:87b}
+{\sc Shelah, S.}
+\newblock {Classification theory for nonelementary classes, I. The number of
+  uncountable models of $\psi \in L_{\omega _{1},\omega }$. Part B}.
+\newblock {\em Israel Journal of Mathematics 46\/} (1983), 241--273.
+
+\bibitem{Sh:136}
+{\sc Shelah, S.}
+\newblock {Constructions of many complicated uncountable structures and Boolean
+  algebras}.
+\newblock {\em Israel Journal of Mathematics 45\/} (1983), 100--146.
+
+\bibitem{Sh:107}
+{\sc Shelah, S.}
+\newblock {Models with second order properties. IV. A general method and
+  eliminating diamonds}.
+\newblock {\em Annals of Pure and Applied Logic 25\/} (1983), 183--212.
+
+\bibitem{Sh:139}
+{\sc Shelah, S.}
+\newblock {On the number of nonconjugate subgroups}.
+\newblock {\em Algebra Universalis 16\/} (1983), 131--146.
+
+\bibitem{Sh:137}
+{\sc Shelah, S.}
+\newblock {The singular cardinals problem: independence results}.
+\newblock In {\em Surveys in set theory}, vol.~87 of {\em London Math. Soc.
+  Lecture Note Ser}. Cambridge Univ. Press, Cambridge-New York, 1983,
+  pp.~116--134.
+\newblock Proceedings of Symp. in Set Theory, Cambridge, August 1978; ed.
+  Mathias, A.R.D.
+
+\bibitem{Sh:128}
+{\sc Shelah, S.}
+\newblock {Uncountable constructions for B.A., e.c. groups and Banach spaces}.
+\newblock {\em Israel Journal of Mathematics 51\/} (1985), 273--297.
+
+\bibitem{Sh:111}
+{\sc Shelah, S.}
+\newblock {On power of singular cardinals}.
+\newblock {\em Notre Dame Journal of Formal Logic 27\/} (1986), 263--299.
+
+\bibitem{Sh:155}
+{\sc Shelah, S.}
+\newblock {The spectrum problem. III. Universal theories}.
+\newblock {\em Israel Journal of Mathematics 55\/} (1986), 229--256.
+
+\bibitem{Sh:88a}
+{\sc Shelah, S.}
+\newblock {Appendix: on stationary sets (in ``Classification of nonelementary
+  classes. II. Abstract elementary classes'')}.
+\newblock In {\em Classification theory (Chicago, IL, 1985)}, vol.~1292 of {\em
+  Lecture Notes in Mathematics}. Springer, Berlin, 1987, pp.~483--495.
+\newblock Proceedings of the USA--Israel Conference on Classification Theory,
+  Chicago, December 1985; ed. Baldwin, J.T.
+
+\bibitem{Sh:88}
+{\sc Shelah, S.}
+\newblock {Classification of nonelementary classes. II. Abstract elementary
+  classes}.
+\newblock In {\em Classification theory (Chicago, IL, 1985)}, vol.~1292 of {\em
+  Lecture Notes in Mathematics}. Springer, Berlin, 1987, pp.~419--497.
+\newblock Proceedings of the USA--Israel Conference on Classification Theory,
+  Chicago, December 1985; ed. Baldwin, J.T.
+
+\bibitem{Sh:113}
+{\sc Shelah, S.}
+\newblock {The theorems of Beth and Craig in abstract model theory. III.
+  $\Delta$-logics and infinitary logics}.
+\newblock {\em Israel Journal of Mathematics 69\/} (1990), 193--213.
+
+\bibitem{ShHM:158}
+{\sc Shelah, S., Harrington, L., and Makkai, M.}
+\newblock {A proof of Vaught's conjecture for $\omega$-stable theories}.
+\newblock {\em Israel Journal of Mathematics 49\/} (1984), 259--280.
+\newblock Proceedings of the 1980/1 Jerusalem Model Theory year.
+
+\bibitem{ShKf:150}
+{\sc Shelah, S., and Kaufmann, M.}
+\newblock {The Hanf number of stationary logic}.
+\newblock {\em Notre Dame Journal of Formal Logic 27\/} (1986), 111--123.
+
+\bibitem{ShRd:97}
+{\sc Shelah, S., and Rudin, M.~E.}
+\newblock {Unordered types of ultrafilters}.
+\newblock {\em Topology Proceedings 3\/} (1979), 199--204.
+\newblock Proceedings of the 1978 Topology Conference (Univ. Oklahoma, Norman,
+  Okla., 1978), I.
+
+\bibitem{ShSt:154}
+{\sc Shelah, S., and Stanley, L.}
+\newblock {Generalized Martin's axiom and Souslin's hypothesis for higher
+  cardinals}.
+\newblock {\em Israel Journal of Mathematics 43\/} (1982), 225--236.
+\newblock Corrections in [Sh:154a].
+
+\bibitem{ShSt:112}
+{\sc Shelah, S., and Stanley, L.}
+\newblock {$S$-forcing. I. A ``black-box'' theorem for morasses, with
+  applications to super-Souslin trees}.
+\newblock {\em Israel Journal of Mathematics 43\/} (1982), 185--224.
+
+\bibitem{ShSt:154a}
+{\sc Shelah, S., and Stanley, L.}
+\newblock {Corrigendum to: ``Generalized Martin's axiom and Souslin's
+  hypothesis for higher cardinals'' [Israel Journal of Mathematics 43 (1982),
+  no. 3, 225--236; MR 84h:03120]}.
+\newblock {\em Israel Journal of Mathematics 53\/} (1986), 304--314.
+
+\bibitem{ShWd:159}
+{\sc Shelah, S., and Woodin, W.~H.}
+\newblock {Forcing the failure of CH by adding a real}.
+\newblock {\em The Journal of Symbolic Logic 49\/} (1984), 1185--1189.
+
+\bibitem{ShZi:96}
+{\sc Shelah, S., and Ziegler, M.}
+\newblock {Algebraically closed groups of large cardinality}.
+\newblock {\em The Journal of Symbolic Logic 44\/} (1979), 522--532.
+\newblock arxiv:1204.1481.
+
+\bibitem{SeSh:63}
+{\sc Stern, J., and Shelah, S.}
+\newblock {The Hanf number of the first order theory of Banach spaces}.
+\newblock {\em Transactions of the American Mathematical Society 244\/} (1978),
+  147--171.
+
+\end{thebibliography}

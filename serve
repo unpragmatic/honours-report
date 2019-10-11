@@ -6,5 +6,8 @@ make
 
 inotifywait -e modify -r -m src |
     while read path action file; do
-        make
+        (  \
+            cd src; \
+            pdflatex -output-directory="../target" main.tex; \
+    	);
     done
