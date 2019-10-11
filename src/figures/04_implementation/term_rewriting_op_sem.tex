@@ -40,11 +40,11 @@
 
     \infrule[Drop]
         {t_2 = (p_1)}
-        {\langle \mbox{drop} : t_2 \rangle \leadsto \emptyset}
+        {\langle \mbox{drop} : t_2 \rangle \leadsto \kihi{}}
 
     \infrule[Term Rewriting]
-        {p_1 \leadsto p_2}
-        {\langle p : p_1 : p' \rangle \leadsto p : p_2 : p'}
+        {p \leadsto p'}
+        {\kihi{ \dots : p : \dots } \leadsto \kihi { \dots : p' : \dots } }
     \end{frame}
     \caption{Term rewriting operational semantics for Kihi}
     \label{fig:term_rewriting_op_sem}
