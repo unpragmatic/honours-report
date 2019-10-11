@@ -1,9 +1,11 @@
 \chapter{Introduction} \label{C:intro}
 One of the principal concerns of programming language designers
-and implementers is performance. This project addresses those concerns in the context of Kihi: a minimal functional, compositional, and concatenative language. Specifically, this project is the creation of a performance focused implementation of the Kihi language. This report outlines the various optimisation methods used in this implementation and provides an evaluation of the results. However firstly the report begins by providing the necessary background information on the Kihi language and the various qualities that make it an interesting optimisation subject. 
+and implementers is performance. The project described in this report attempts to those concerns in the context of Kihi, a language with many uncommon traits. The project's goal was to develop a performance focused implementation of the Kihi language, in particular focused on minimising the time between source code input and execution completion. This report describes the performance focused design underlying the implementation, also known as the Kihi Runner. This also includes an explanation of a potentially novel optimisation technique used in this project.
 
+This report begins by providing an introduction to the Kihi language in chapter \ref{C:background}. This includes an explanation of the language and its origins and also a brief explanation of surrounding material such as related programming paradigms. Readers familiar with this material may skip to chapter \ref{C:implementation} which discussed the heart of the project: the implementation. This includes details of the implementation's design and the optimisation techniques used to improve performance. Most interestingly, section \ref{sec:implementation_optimisation} introduces the aforementioned optimisation technique capable of dynamically finding more efficient representations of programs.
 
 \todo[inline]{
+    Move to background:
 In addition, the operational semantics of the language do not
 resemble actual bare metal instructions.
 
@@ -13,13 +15,3 @@ valley of abstraction between the program semantics and bare
 metal brings about many challenges and opportunities.
 }
 
-
-\todo[inline]{
-NOTE: maybe move this to introduction.
-The Kihi programming language consists of only six types of terms.
-Furthermore, it can be considered a functional, concatatenative,
-and compositional language. Culmulatively, these features make it
-an interesting subject for researching. An explanation of these
-terms is provided in the upcoming sections. 
-
-}

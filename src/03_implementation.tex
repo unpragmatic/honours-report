@@ -1,18 +1,16 @@
 \chapter{Implementation} \label{C:implementation} 
-This chapter discusses the details of the Kihi implementation presented in this report. The heart of this chapter is a description of the various performance driven designs decisions and features made and developed for this implementation of Kihi. However, in order to understand that an understanding of the basic implementation is necessary. Specifically, how the semantics outlined in chapter \ref{C:background} can be implemented as code. But firstly, in order to guide the rest of the chapter, an overview of the implementation is presented below.
+This chapter discusses the details of the Kihi implementation presented in this report. The heart of this discussion is a description of the various performance driven designs decisions and features underlying the implementation. However, this chapter also aims to provide an overall understanding by discussing basic implementation details such as how the semantics outlined in chapter \ref{C:background} are implemented as code. But firstly, in order to guide the rest of the chapter, an overview of the implementation is presented below.
 
 \section{Overview}
 \input{figures/04_implementation/kihi_execution_process}
-
-The implementation described in this project is capable of directly handling Kihi source code. The execution process is outlined in figure \ref{fig:kihi_execution_process}, and as the figure shows, the source code is first parsed and transformed into an intermediary representation before execution. The details of the intermediary representation are discussed in section \ref{sec:implementation_intermediary_representation}. This intermediary is then optionally optimised through the process of symbol detection, and symbol optimisation which are the subjects of section \ref{sec:implementation_optimisation}. The details of the execution stage are ommited from the above figure due to desire for simplicity, but the process essentially involves selecting an executor, which can be understood as a virtual machine, and utilising it to execute the intermediary representation. The implementation supports three types of executors: a term rewriting based executor, a stack based executor, and a depreciated term rewriting based executor kept for posterity. The implementation details of the executor process and the executors are provided in section \ref{sec:implementation_executors}
+The implementation described in this project, which is also referred to as the Kihi Runner, is capable of directly handling Kihi source code. The execution process is outlined in figure \ref{fig:kihi_execution_process}, and as the figure shows, the source code is first parsed and transformed into an intermediary representation before execution. The details of the intermediary representation are discussed in section \ref{sec:implementation_intermediary_representation}. This intermediary is then optionally optimised through the process of symbol detection, and symbol optimisation which are the subjects of section \ref{sec:implementation_optimisation}. The details of the execution stage are omitted from the above figure due to desire for simplicity, but the process essentially involves selecting an executor, which can be understood as a virtual machine, and utilising it to execute the intermediary representation. The implementation supports three types of executors: a term rewriting based executor, a stack based executor, and a depreciated term rewriting based executor kept for posterity. The implementation details of the executor process and the executors are provided in section \ref{sec:implementation_executors}
 
 \todo[inline]{
     maybe in background elaborate on what a virtual machine is?
 }
 
 \section{Configuration}
-The implementation provides various configuration options available at compile time and run time. Compile time options are available through feature flags and run time options can be specified using command line flags. Feature flags make it possible to include or exclude various features such as the certain executors, CPU profiling, and output printing. The run time arguments make it possible to specify which executor to utilise, degree of optimisation, and number of outputs to print. More specific details are available in the project's readme.
-
+The Kihi Runner provides various configuration options available at compile time and run time. Compile time options are available through feature flags and run time options can be specified using command line flags. Feature flags make it possible to include or exclude various features such as the certain executors, CPU profiling, and output printing from the binary. This reduces the size of the binary and also removes unneeded features which might impact performance. This is especially true of output printing since formatting outputs incurs an noticeable runtime overhead. CPU profiling also incurs an, albeit minor, runtime overhead. The run time arguments are use to specify which executor to utilise, the degree of optimisation, and the number of outputs to print. More specific details of these configuration options are available in the project's readme.
 
 \todo[inline]{
     move this:
@@ -32,36 +30,40 @@ The intermediary representation is essential identical to an abstract syntax tre
 
 
 \section{Executors}\label{sec:implementation_executors}
-Executors are used to compare the performance of various execution methods.
-They represent virtual machines that are capable of executing the intermediary representation and are essentially the implementations of the operational semantics shown in section \ref{sec:background_evaluation_methods}. In fact, an almost direct translation of the semantics presented in that section lies at the heart of this project's implementation. Furthermore, the algorithm used in this implementation is accurately represented by the pseudocode in figures \ref{fig:term_rewriting_pseudocode} and \ref{fig:stack_pseudocode}. 
+Executors are used to compare the performance of various execution methods. They represent virtual machines that are capable of executing the intermediary representation and are essentially the implementations of the operational semantics shown in section \ref{sec:background_evaluation_methods}. In fact, an almost direct translation of the semantics presented in that section lies at the heart of this project's implementation. Furthermore, the algorithm used in this implementation is accurately represented by the pseudocode in figures \ref{fig:term_rewriting_pseudocode} and \ref{fig:stack_pseudocode}.
 
-Comparing the performance of executors is worthwhile because the implementation of the term rewriting semantics and the stack semantics, which hereinafter are refered to as the reduce executor and stack executor, are substantially different from a mechanical perspective. The reduce executor algorithm can be decomposed into two parts: reducible term finding and term reduction. In contrast, the stack executor algorithm simply consists of reduction.  Hypothetically it would appear that the stack executor would perform significantly better than the reduce executor simply due to the additional $\Theta(n)$ reducible term finding operation required before each reduction, as shown by line 4 of figure \ref{fig:term_rewriting_pseudocode}. Whether this holds in practice is the topic of chapter \ref{C:evaluation}.
+\subsection{Reduce Executor}
+\input{figures/04_implementation/term_rewriting_pseudocode}
+
+The heart of the reduce executor algorithm is relatively simple. The reduce executor algorithm consists of only two steps. The first step is finding a reducible term, this means finding an operator directly followed by a sufficient number of abstractions. This corresponds to the \lstinline{find_reductible_term} function shown in figure \ref{fig:term_rewriting_pseudocode}. Secondly, if an reducible term is found the corresponding reduction rule is applied, otherwise if no such terms can be found the program halts. This process is repeated until the program halts.
+
+\subsection{Stack Executor}
+\input{figures/04_implementation/stack_pseudocode}
+
+The stack executor algorithm is equally simple or potentially even simpler. The algorithm consists of only a single step where the right most term in the program is inspected and the stack modified accordingly. For instance, when an abstraction is encountered it is pushed onto the stack, and when an apply is encountered an abstraction is popped off the stack and the abstraction's inner program appended to the terms. This is repeated until the right most term requires more arguments than there are values on the stack or the terms are exhausted.
+
+Comparing the performance of executors is worthwhile because the implementations of the term rewriting semantics and the stack semantics, which hereinafter are referred to as the reduce executor and stack executor, are substantially different from a mechanical perspective. The reduce executor algorithm can be decomposed into two parts: reducible term finding and term reduction. In contrast, the stack executor algorithm simply consists of reduction.  Hypothetically it would appear that the stack executor would perform significantly better than the reduce executor simply due to the additional $\Theta(n)$ reducible term finding operation required before each reduction, as shown by line 4 of figure \ref{fig:term_rewriting_pseudocode}. Whether this holds in practice is the topic of chapter \ref{C:evaluation}.
 
 As mentioned in earlier sections, a third executor also exists. This third executor is a previous implementation of the term rewriting operational semantics and is primarily kept for posterity. However, it also provides an useful indicator of how much the performance can vary when the underlying operational semantics remain the same.
 
 
 \section{Optimisation}\label{sec:implementation_optimisation}
-The principal goal of this project is performance and thus it is unsurprin
-There were two primary optimisations implemented in the Kihi virtual
-machine. Firstly, symbol detection: finding commonly occuring or
-meaningful sequences of terms, and secondly symbol optimisation: the
-process of constructing a more efficient representation of a symbol.
-
-\todo[inline]{This section. It is the most interesting and important probably}
-\todo[inline]{Challenge of efficiently representing a symbol}.
-
 \input{figures/04_implementation/kihi_intermediary_representation_example_2}
 
-\subsection{Symbolic Analysis}
-\todo[inline]{Find reference probably simmilar idea exists in lit}
-The Kihi virtual machine implements a relatively simple symbol analyser.
-The base symbolic analyser combines adjacent operators into symbols. The
-motivation behind this method
+\input{figures/04_implementation/kihi_symbol_optimisation}
 
-\section{Execution Style}
+The most significant contribution of this project is the creation of an approach for optimising Kihi programs. The approach essential involves replacing subprograms in Kihi with a potentially more efficient representation. This is accomplished in a two stage process. This is accomplished in two stage process. First, candidate subprograms are found through symbol detection and secondly these candidates are optimised using symbol optimisation. The subprograms are replaced by their corresponding symbols which can then executed using the representations created by the symbol optimisation process.
 
+The symbol optimisation process essentially amounts to symbolic execution with placeholder inputs. The output of this execution provides an direct representation of the program's output parametric on the inputs. The symbolic execution is a limited form of stack execution where the `apply' operator can only be evaluated when the abstraction captures a statically known program. The output representation provides a template for the program's output given specific arguments. This allows for potentially faster execution since a simple find and replace procedure can be used to determine the output of executing a program given certain arguments rather than ordinary execution. Figure \ref{fig:kihi_symbol_optimisation} shows the output of this process for some small sample programs. 
 
-\section{Benchmark Suite}
+\input{figures/04_implementation/symbol_optimisation_pseudocode}
 
-\input{figures/04_implementation/term_rewriting_pseudocode}
-\input{figures/04_implementation/stack_pseudocode}
+The symbol detection process is designed to decompose the program into symbols that can be meaningfully optimised. There are many ways to decompose a program, however the algorithm utilised in the Kihi Runner is relatively simple. It simply combines any sequence of operators unbroken by abstractions into a single symbol. This is applied to the entire program and is recursively applied to the abstractions within programs. The output of this process when applied to the program in figure \ref{fig:kihi_example} is shown in figure \ref{fig:kihi_intermediary_representation_example_2}.
+
+This overall strategy to optimisation is general and encourages further experimentation and research. The specific algorithms used for symbol detection and optimisation are not restricted to the ones utilised in this project. There are potentially more complex algorithms capable of handling more complex subprograms, this topic is discussed in further detail in chapter \ref{C:future_work}.
+
+The origins of this approach are attempts at optimising the performance of the initial version of the Kihi Runner. In particular, they arose from initial attempts are optimising the Kihi Runner's performance on the count program presented in figure \ref{fig:kihi_example}. One such attempt was an symbol detection and symbol optimisation algorithm tailored to numbers. Although never completed, that algorithm would have been able to decode the church encoding of numbers and common operations such as addition. This would have allowed for a Kihi program to be efficient executed using basic assembly instructions, which are likely several magnitudes faster than ordinary execution. However, before this was fully developed it was generalised into the form that appears here.
+
+\todo[inline]{Talk about why this might be faster than the ordinary execution}.
+
+\todo[inline]{AST for the optimised representations}

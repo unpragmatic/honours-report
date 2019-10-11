@@ -65,3 +65,13 @@ mapping Kihi to machine instructions.
 
 It limits the space of possible
 optimisations and is also far detracted from actual bare metal instructions.
+
+
+This process can be parametrised on the specific symbol detection and symbol optimisation process, however the Kihi Runner only provides two symbol detection algorithms and one symbol optimisation algorithm.
+
+Symbol optimisation amounts to dynamically computing an more efficient representation of terms. 
+
+This is process is also illustrated in figure \ref{fig:kihi_execution_process}. This process is similar to classical pinhole optimisation techniques where sequences of instructions are replaced with semantically equivalent but more efficient instructions.
+
+
+\todo[inline]{Future work: implement number specific detection and compare performance}

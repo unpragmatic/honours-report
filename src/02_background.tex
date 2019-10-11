@@ -1,13 +1,9 @@
-\chapter{Background} \label{C:background} 
-Kihi is a unique language. It is concatenative, compositional, and functional --- all traits that are not commonly found in mainstream language let alone in conjunction. It is worth explaining these concepts so that a proper appreciation of the language and the implementation challenges can be developed. 
-This chapter hopes to provide all the background
-necessary for an undergraduate software engineering student
-to understand the rest of this report.
-It begins with a brief explanation of 
-functional, concatenative, and compositional
-programming paradigms.
+\chapter{Background} \label{C:background}
+The roots of Kihi lie in concatenative, compositional, and functional programming --- paradigms that are not commonly associated with mainstream languages let alone in conjunction. It is worthwhile to understand these various programming paradigms in order to understand why Kihi exists and encourage an appreciation of the technical challenges of the project. The goal of this chapter is to provide the background necessary for an undergraduate software engineering student
+to understand the rest of this report. This starts with an introduction to the aforementioned programming paradigms, before delving into the details of Kihi itself.
 
 \section{Functional Languages}
+\input{figures/02_background/imperative_vs_functional_example.tex}
 Functional programming languages are defined by their use
 of function evaluation as the primary means of computation.
 This stands in contrast to imperative programming languages
@@ -18,14 +14,19 @@ in a functional context, cannot.
 In that sense functional functions are more similar to imperative
 expressions than imperative functions.
 
+Of course this abstraction
+A program that does not modify any state is a program that does nothing. This practical aspect is understood in functional programming as the separation between pure and impure functions. With the former denoting a function that cannot modifying state in contrast to the latter which may.
+Of course this raises the point: if a functional programming cannot modify state then how can a functional language be useful.
+
 Many mainstream programming languages support first-class functions and thus support programming in a functional style. However, whether they are considered functional programming languages is largely determined by the dominant programming style of the community. For instance, while Java 8+ supports programming in a functional style it is still typically considered an object orientated language. Figure
 \ref{fig:imperative_vs_functional_example} illustrates this by showing a imperative and functional approach to finding the sum
 of a list in Java.
 
+
+Functional languages often distinguish between 
 \todo[inline]{Address purity, reference haskell book}
 \todo[inline]{Address difficult of optimising a pure language}
 
-\input{figures/02_background/imperative_vs_functional_example.tex}
 
 
 \section{Concatenative and compositional languages}
