@@ -1,4 +1,8 @@
 \chapter{Implementation} \label{C:implementation} 
+
+\todo[inline]{
+    The final design of this project was ultimately the process of constant iteration. What is presented here is merely the design of the final implementation. 
+}
 This chapter discusses the details of the Kihi implementation presented in this report. The heart of this discussion is a description of the various performance driven designs decisions and features underlying the implementation. However, this chapter also aims to provide an overall understanding by discussing basic implementation details such as how the semantics outlined in chapter \ref{C:background} are implemented as code. But firstly, in order to guide the rest of the chapter, an overview of the implementation is presented below.
 
 \section{Overview}
@@ -65,5 +69,7 @@ This overall strategy to optimisation is general and encourages further experime
 The origins of this approach are attempts at optimising the performance of the initial version of the Kihi Runner. In particular, they arose from initial attempts are optimising the Kihi Runner's performance on the count program presented in figure \ref{fig:kihi_example}. One such attempt was an symbol detection and symbol optimisation algorithm tailored to numbers. Although never completed, that algorithm would have been able to decode the church encoding of numbers and common operations such as addition. This would have allowed for a Kihi program to be efficient executed using basic assembly instructions, which are likely several magnitudes faster than ordinary execution. However, before this was fully developed it was generalised into the form that appears here.
 
 \todo[inline]{Talk about why this might be faster than the ordinary execution}.
+
+\todo[inline]{Talk about the actual design of the implementation}.
 
 \todo[inline]{AST for the optimised representations}
