@@ -60,3 +60,142 @@ motivation behind this method
 
 \input{figures/04_implementation/term_rewriting_pseudocode}
 \input{figures/04_implementation/stack_pseudocode}
+
+\chapter{Background} \label{C:background}
+This chapter aims to provide an understanding of the surrounding background material. In particular, this chapter provides a explanation of the variety of concepts surrounding the Kihi programming language alongside an explanation of the language itself. This includes an introduction to the programming paradigms that inspired Kihi such as functional programming, concatenative programming, and compositional programming. The chapter then follows with a thorough explanation of Kihi, examining topics such as its purpose, grammar, and evaluation methods.
+
+
+\section{Functional Programming}
+\input{figures/02_background/imperative_vs_functional_example.tex}
+Functional programming languages are defined by their use
+of function evaluation as the primary means of computation.
+This stands in contrast to imperative programming languages
+such as Java which represents computation as a series of 
+statements. The distinguishing factor being that statements
+are capable of manipulating state whereas functions,
+in a functional  context, cannot.
+In that sense functional functions are more similar to imperative
+expressions than imperative functions.
+
+Of course this abstraction
+A program that does not modify any state is a program that does nothing. This practical aspect is understood in functional programming as the separation between pure and impure functions. With the former denoting a function that cannot modifying state in contrast to the latter which may.
+Of course this raises the point: if a functional programming cannot modify state then how can a functional language be useful.
+
+Many mainstream programming languages support first-class functions and thus support programming in a functional style. However, whether they are considered functional programming languages is largely determined by the dominant programming style of the community. For instance, while Java 8+ supports programming in a functional style it is still typically considered an object orientated language. Figure
+\ref{fig:imperative_vs_functional_example} illustrates this by showing a imperative and functional approach to finding the sum
+of a list in Java.
+
+
+Functional languages often distinguish between 
+\todo[inline]{Address purity, reference haskell book}
+\todo[inline]{Address difficult of optimising a pure language}
+
+
+
+\section{Concatenative and compositional languages}
+Concatenative and compositional are two labels that are often used in tandem when describing a programming language. The first label is used to describe a programming languages where the source code of two programs can be concatenated together into a meaningful program, and the second a language where the juxtaposition of terms denotes function composition. These labels are often found together because these properties are closely associated. Any language that is compositional can easy express pipeline processes by simply enumerating the stages. It is then also clear that the source code of such programs can also be concatenated to form a larger pipeline with the combined stages of the two.
+
+\todo[inline]{Do concrete example of Forth or something, also find a reference}
+
+
+\input{figures/02_background/operator_explanation}
+
+\section{Kihi}
+The Kihi programming language is the focus of this report so it is worthwhile to explain its structure and operation in detail. This section begins with an explanation of the language's grammar and follows up with an exploration of two ways a Kihi program can be executed.
+
+\subsection{Grammar}
+As previous mentioned, Kihi consists of only six types of terms: one value type and five operators that can manipulate values. The value type, more commonly referred to as an abstraction, is a Kihi program captured by parenthesis. The is illustrated by figure \ref{fig:kihi_grammar} which shows the formal grammar of Kihi and figure \ref{fig:kihi_example} which provides an example of a Kihi program. The operators are plainly explained in figure \ref{fig:operator_explanation}.
+
+\input{figures/02_background/kihi_grammar.tex}
+\input{figures/02_background/kihi_example.tex}
+
+\todo[inline]{Add citation for the counting program?}
+\todo[inline]{Provide examples of how the operators work}
+\todo[inline]{The exact behaviour of the operators are described later}
+
+
+\subsection{Evaluation Methods}\label{sec:background_evaluation_methods}
+There are two main execution styles that can be used to execute Kihi programs: a term rewriting based approach and a stack based approach. These two approaches are identical in terms of output for terminating programs, however performance and output can differ significantly for certain classes of programs. This section describes the two execution styles and explains when they differ.
+
+\subsubsection{Term Rewriting}
+Term rewriting is the process of finding
+and replacing reducible terms with their reduced form. For Kihi,
+this means finding terms which are directly followed by
+some number of abstractions. The specific number of abstractions
+required is determined by the term and can be thought of as the
+number of arguments. This execution paradigm allows execution
+to occur anywhere in the program because a reducible term may
+be found anywhere in the program and each reduction can be
+thought of as an execution step. The operational semantics for a term rewriting based execution of
+Kihi is shown in figure \ref{fig:term_rewriting_op_sem}. Informally, term rewriting can be understood by referring to figure \ref{fig:operator_explanation}. The process is simply consists of finding a term where the rules shown in figure \ref{fig:operator_explanation} can be applied and applying them.
+
+% \todo[inline]{reword informal}
+\subsubsection{Stack}
+Stack based execution is a model of execution where each term has a specific effect on a stack. The terms are typically either processed in a right to left order or vice versa. In contrast to term rewriting, execution is restricted to a specific next term. In the context of Kihi, the next term is the rightmost term of the program. The operational semantics for a stack based Kihi implementation are provided in figure \ref{fig:stack_op_sem}. Informally, it can be understood as a processes each term from right to left in order where the term's can manipulate the stack and program. When an abstraction is encountered it is simply pushed onto the stack, and when an operator is encountered the arguments it requires are popped off the stack and the result either pushed onto the stack, in the case of left, right, copy, or discard in the case of drop, or appended to the program in the case of apply.
+
+\todo[inline]{reword informal explanation}
+
+\todo[inline]{talk about church numeral encoding}
+
+% The key difference between these methods of execution is
+% revealed when term rewriting is broken down into its two fundamental steps. Namely, first finding an executable term, and secondly executing it. The stack based style can be viewed as a simplification of term rewriting where the first step is irrelevant.
+
+% In fact, term rewriting can very easily simulate a stack machine by storing the stack within the program.
+
+\input{figures/04_implementation/term_rewriting_op_sem.tex}
+\input{figures/04_implementation/stack_op_sem.tex}
+
+\subsubsection{Term Rewriting vs Stack}
+\todo[inline]{
+The most fundamental difference these methods of execution is
+revealed when term rewriting is broken down into two fundamental steps.
+
+1. Seek
+    - Find the term to execute
+2. Execution
+    - Execute that term
+
+In contrast, stack based methods do not involve a seek phase. This
+can significantly improve performance, but also shows that stack
+based systems are a subset of term rewriting based systems. In fact,
+a term rewriting based system seeking from right to left is usually 
+equivilent to a stack based system when the program. The edgecase
+being when the program being executed contains barriers. In this case,
+term rewriting based systems are able to find executable portions
+beyond the barrier.
+
+A term rewriting based virtual machine will be able to execute
+all programs a stack based machine is able to. The proof of this
+is relatively simple. One can imagine a term rewriting machine 
+that searches for reducible terms right to left as equivilent to
+a stack machine for terminating programs.
+
+
+
+A program representing an infinite data structure, such as the count
+program which outputs a continous stream of numbers, cannot be
+processed through a normal stack based approach. There may be alterations
+to the stack based approach which may allow values to be pushed 
+through to the left hand side of the program.
+
+
+an abstraction is
+encountered it is pushed onto the stack and when a term (reword)
+is found the arguments are popped off the stack and the 
+result, if it is an abstraction, is pushed onto the stack.
+
+The first approach involves finding and replacing
+reducible terms with their reduced form. The essence of this
+execution style is shown in figure 
+\ref{fig:term_rewriting_pseudocode} which provides a pseudocode
+description of the essential algorithm.
+
+These two different approaches are identical for
+terminating programs but can display very different behaviour
+for non-terminating programs.
+Any acknowledgments should go 
+in here, between the title page and the table of contents.  The 
+acknowledgments do not form a proper chapter, and so don't get a 
+number or appear in the table of contents.
+}
+\todo[inline]{Address the addition of side-effectful operators}.
