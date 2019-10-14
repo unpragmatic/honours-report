@@ -1,5 +1,5 @@
 \chapter{Design and Implementation} \label{C:implementation} 
-This chapter discusses the details of the Kihi implementation presented in this report. Specifically, this section shows how the semantics outlined in chapter \ref{C:background} can be implemented and discusses various performance driven design decisions, such as language choice and optimisation strategies. But firstly, in order to guide the discussion, an overview of the actual program is presented below.
+This chapter discusses the details of the Kihi implementation presented in this report. Specifically, this section shows how the semantics outlined in chapter \ref{C:background} can be implemented and discusses various performance-driven design decisions, such as language choice and optimisation strategies. But firstly, in order to guide the discussion, an overview of the actual program is presented below.
 
 \section{Overview}
 The implementation described within this report is capable of executing Kihi source directly. Internally, the source code is first parsed into an intermediary representation before execution. The details of the intermediary representation are discussed in section \ref{sec:implementation_intermediary_representation}. The execution process involves selecting an executor, which can be understood as a virtual machine, and utilising it to execute the intermediary representation. The executable can be built with support for three types of executors: an executor based on term rewriting operational semantics, an executor based on stack operational semantics, and a depreciated term rewriting based executor kept for posterity. 
@@ -62,7 +62,7 @@ motivation behind this method
 \input{figures/04_implementation/stack_pseudocode}
 
 \chapter{Background} \label{C:background}
-This chapter aims to provide an understanding of the surrounding background material. In particular, this chapter provides a explanation of the variety of concepts surrounding the Kihi programming language alongside an explanation of the language itself. This includes an introduction to the programming paradigms that inspired Kihi such as functional programming, concatenative programming, and compositional programming. The chapter then follows with a thorough explanation of Kihi, examining topics such as its purpose, grammar, and evaluation methods.
+This chapter aims to provide an understanding of the surrounding background material. In particular, this chapter provides an explanation of the variety of concepts surrounding the Kihi programming language alongside an explanation of the language itself. This includes an introduction to the programming paradigms that inspired Kihi such as functional programming, concatenative programming, and compositional programming. The chapter then follows with a thorough explanation of Kihi, examining topics such as its purpose, grammar, and evaluation methods.
 
 
 \section{Functional Programming}

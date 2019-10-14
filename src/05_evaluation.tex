@@ -1,6 +1,28 @@
 \chapter{Future and Related Work} \label{C:work} 
-This chapter aims to provide a purvey of the related langauges not already discussed.
+This chapter aims to provide ideas about potential future steps. In addition to a purvey of related work not already discussed.
 
-\section{Related Languages}
-Like Kihi, Factor is also a concatenative, compositional language that features an optimising compiler \ref{pestov2010factor}. However, Factor is a much higher level language that provides abstractions and operators that have been investigated by a great deal of optimisation literature. For instance, method inlining, overflow check elimination, and escape analysis. These optimisation methods cannot be readily applied to Kihi because of the minimal nature of the language, but perhaps alternative representations of Kihi could utilise these higher abstractions and allow for such optimisations to be used.
+\section{Future Work}
+\subsection{Memory Optimisation}
+Since the evaluation has shown that the major performance benefits arise from better memory handling. It begs the question to what extent is it possible to minimise the number of memory allocations and modifications in the Kihi Runner. An alternative data structure emphasising sharing might enable powerful memory reuse, further reducing the number of memory allocations required to run a Kihi program.
 
+\subsection{Improve Optimised Representation}
+A weakness of the current optimised representation is that it simply directly encodes the output of the symbolic execution in an AST. This often results in a degenerate tree structure due to the nature of Kihi programs, for an example see figure \ref{fig:kihi_church_numeral_encoding}. This could be improved by potentially using an alternative data structure to store the output. An obvious improvement would be to simply replace an abstraction with an abstraction tagged with an integer representing the depth of the parenthesis. This would much more efficiently encode structures such as \lstinline{(((())))}.
+
+\subsection{Combine Reduce Executor and Stack Executor}
+It might be possible to overcome the weakness of the stack executor by adopting ideas from the reduce executor. For instance, an on-demand reduce executor could be utilised for streaming outputs. Alternatively, it might be possible to detect when a program is capable of emitting an output in which case the reduce executor can be used.
+
+\subsection{JIT Optimisation}
+Although experiments were carried out with JIT optimisation using the two-phase optimisation algorithm presented in this report, the results were not particularly promising. This was largely due to programs growing larger during execution and the optimisation algorithm scaling poorly with large programs. This could be potentially tackled by implementing concurrent JIT optimisation or a more efficient optimisation algorithm.
+
+\subsection{Multipass Optimisation and Symbol Merging}
+The symbol optimiser currently only performs one symbolic execution pass on the symbol. It is possible that multiple passes would be able to encode more complex structures that only emerge after several passes. This also goes hand in hand with symbol merging, where two sequential symbols are merged by reasoning about the optimised forms of the symbols. Ultimately, these ideas are about improving the fidelity of the symbolic execution in order to capture more complex structures such as bind.
+
+\subsection{Utilise Optimisation Strategy on Other Languages}
+The optimisation strategy presented here is relatively general and should apply to other languages. It would be interesting to see whether this form of optimisation could be used to tackle problems in practical programming languages. Furthermore, this strategy could be mixed with artificial intelligence and super optimisation \cite{singh2017ap}\cite{auler2011superoptimization}.
+
+\section{Related Work}
+\subsection{Factor}
+Like Kihi, Factor is also a concatenative, compositional language that features an optimising compiler \cite{pestov2010factor}. However, Factor is a much higher level language that provides abstractions and operators that have been investigated by a great deal of optimisation literature. For instance, method inlining, overflow check elimination, and escape analysis. These optimisation methods cannot be readily applied to Kihi because of the minimal nature of the language, but perhaps alternative representations of Kihi could utilise these higher abstractions and allow for such optimisations to be used.
+
+\subsection{Peephole Optimisation}
+Peephole optimisation is relatively similar to the approach taken to optimisation here. It is usually used for low-level languages and commonly used to optimise away redundant instructions introduced by the initial translation of a compiler \cite{aktolgaPatternMatchingStrategies2005}\cite{PeepholeOptimization2019}\cite{bansalAutomaticGenerationPeepholea}.
