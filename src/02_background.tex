@@ -2,42 +2,29 @@
 This chapter aims to provide an understanding of the surrounding background material. In particular, this chapter provides a explanation of the variety of concepts surrounding the Kihi programming language alongside an explanation of the language itself. This includes an introduction to the programming paradigms that inspired Kihi such as functional programming, concatenative programming, and compositional programming. This is followed by a thorough explanation of Kihi, examining topics such as its purpose, grammar, and evaluation methods.
 
 \section{Imperative Programming}
-The world of programming languages began with imperative programming languages. These languages described a program as a series of statements, each representing an operation for the computer to perform. For low level languages such as machine code and assembly, these statements can be an almost direct reflection of the actual computer's behaviour. However, writing programs in these languages is quickly becomes impractical as the complexity of the application grows. Higher level languages, such as Java and C++, overcome this by providing higher level abstractions, such as objects and procedures, that can express in a single statement what might have taken hundreds in a lower level.
+The world of programming languages began with imperative programming languages. These languages described a program as a series of statements, each representing an operation for the computer to perform. For low level languages such as machine code and assembly, these statements can be an almost direct reflection of the actual computer's behaviour. However, writing programs in these languages is quickly becomes impractical as the complexity of the application grows. Higher level languages, such as Java and C++, overcome this by providing higher level abstractions, such as objects and procedures. These not only provide a mechanism for organisation and managing complexity, but are also capable of expressing in a single statement what might have taken hundreds in a lower level language.
 [citation needed?]
 
 
 \section{Functional Programming}
 \input{figures/02_background/imperative_vs_functional_example.tex}
-Functional programming languages are defined by the prevelent use of functions as the means of computation. This stands in contrast to other paradigms such as imperative programming, which primarily utilise state mutating statements; and declarative programming, which primarily utilise assertions of program results \ref{jones2018practice} \ref{}. In order for a language to support functional programming it must provide first-class functions, meaning that functions are . Colloquially however, languages are typically not regarded as functional programming languages unless the conventions of
-
-their use
-of function evaluation as the primary means of computation.
-This stands in contrast to imperative programming languages
-such as Java which utilise state changing statements as the primary means of computation. The contrast being that functions represent a transformation of inputs whereas statements represent a modification (mutation) of state. 
+Standing in contrast to imperative programming is functional programming. In contrast to imperative programming languages which describe a program using a series of statements, functional programming describes a program as a series of function evaluations. A function represents a transformation. A function is called pure when the transformation has no side effects, meaning the function has no observable effects aside from emitting the output \cite{FunctionalProgrammingHaskellWiki2019}. In contrast, statements in imperative languages are often impure.
 
 
-In that sense functional functions are more similar to imperative
-expressions than imperative functions.
-
-Of course this abstraction
-A program that does not modify any state is a program that does nothing. This practical aspect is understood in functional programming as the separation between pure and impure functions. With the former denoting a function that cannot modifying state in contrast to the latter which may.
-Of course this raises the point: if a functional programming cannot modify state then how can a functional language be useful.
-
-Many mainstream programming languages support first-class functions and thus support programming in a functional style. However, whether they are considered functional programming languages is largely determined by the dominant programming style of the community. For instance, while Java 8+ supports programming in a functional style it is still typically considered an object orientated language. Figure
-\ref{fig:imperative_vs_functional_example} illustrates this by showing a imperative and functional approach to finding the sum
-of a list in Java.
-
+In order to be considered a functional language, the language must have first-class functions, which are functions that can be treated as values. Java 8+ provides this in the form of lambda expressions, allowing for programs to written in a functional manner. An example of this is shown in figure \ref{fig:imperative_vs_functional_example}. Colloquially however, Java and languages like it are not considered functional programming languages since the predominant paradigm is not functional programming, rather it is object orientation or some other paradigm respectively.
 
 Functional languages often distinguish between 
 \todo[inline]{Address purity, reference haskell book}
 \todo[inline]{Address difficult of optimising a pure language}
 
 
+\section{Concatenative and compositional languages} 
+Compositional and concatenative are two labels that are often used in tandem when describing a programming language. The former describes a language where the main interaction is function composition as opposed to function application. The latter is used to describe a language where the source code of two programs can be meaningfully concatenated together. Figure \ref{fig:applicative_vs_compositional_example} demonstrates the differences between applicative and compositional languages. These two labels are often found together because concatenative languages naturally encourage a compositional approach to programming since it allows for programs to understood as a pipeline. In contrast, an applicative concatenative language has no simple mental model.
 
-\section{Concatenative and compositional languages}
-Concatenative and compositional are two labels that are often used in tandem when describing a programming language. The first label is used to describe a programming languages where the source code of two programs can be concatenated together into a meaningful program, and the second a language where the juxtaposition of terms denotes function composition. These labels are often found together because these properties are closely associated. Any language that is compositional can easy express pipeline processes by simply enumerating the stages. It is then also clear that the source code of such programs can also be concatenated to form a larger pipeline with the combined stages of the two.
+The first label is used to describe a programming languages where the source code of two programs can be concatenated together into a meaningful program, and the second a language where the juxtaposition of terms denotes function composition. These labels are often found together because these properties are closely associated. Any language that is compositional can easy express pipeline processes by simply enumerating the stages. It is then also clear that the source code of such programs can also be concatenated to form a larger pipeline with the combined stages of the two.
 
-\todo[inline]{Do concrete example of Forth or something, also find a reference}
+\input{figures/02_background/forth_example}
+\input{figures/02_background/applicative_vs_compositional_example}
 
 
 \input{figures/02_background/operator_explanation}

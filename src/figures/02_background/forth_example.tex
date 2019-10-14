@@ -1,0 +1,10 @@
+\begin{figure}[htb]
+    \centering
+    \begin{lstlisting}[language=Forth]
+: STACK-EMPTY DEPTH 1 = ;
+
+: SUM BEGIN + STACK-EMPTY UNTIL ;
+\end{lstlisting}
+    \caption{A forth program that sums all the elements on the stack}
+    \label{fig:forth_example}
+\end{figure}
