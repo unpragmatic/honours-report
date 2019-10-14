@@ -21,7 +21,9 @@ Functional languages often distinguish between
 \section{Concatenative and compositional languages} 
 Compositional and concatenative are two labels that are often used in tandem when describing a programming language. The former describes a language where the main interaction is function composition as opposed to function application. The latter is used to describe a language where the source code of two programs can be meaningfully concatenated together. Figure \ref{fig:applicative_vs_compositional_example} demonstrates the differences between applicative and compositional languages. These two labels are often found together because concatenative languages naturally encourage a compositional approach to programming since it allows for programs to understood as a pipeline. In contrast, an applicative concatenative language has no simple mental model.
 
-The first label is used to describe a programming languages where the source code of two programs can be concatenated together into a meaningful program, and the second a language where the juxtaposition of terms denotes function composition. These labels are often found together because these properties are closely associated. Any language that is compositional can easy express pipeline processes by simply enumerating the stages. It is then also clear that the source code of such programs can also be concatenated to form a larger pipeline with the combined stages of the two.
+Forth is a stack based concatenative language, meaning the operators mutate the stack in some manner and that successive operators describe successive mutations of the stack.  that utilises a postfix notation, meaning that the operators follow the arguments.
+
+
 
 \input{figures/02_background/forth_example}
 \input{figures/02_background/applicative_vs_compositional_example}
