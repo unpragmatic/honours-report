@@ -1,11 +1,11 @@
-\begin{figure}[htb]
+\begin{figure}[!htb]
     \centering
     \begin{lstlisting}
-Applicative:
-    f g x => (f(g))(x) 
+Applicative (e.g. Haskell):
+    f g x = (f(g))(x) 
 
-Compositional:
-    f g x => f(g(x))
+Compositional (e.g. Forth):
+    f g x = f(g(x))
 \end{lstlisting}
     \caption{A demonstration of the differences between an applicative and compositional language.}
     \label{fig:applicative_vs_compositional_example}

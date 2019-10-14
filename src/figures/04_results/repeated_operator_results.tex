@@ -1,0 +1,51 @@
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{04_results/images/repeated_operator_results}
+
+    \begin{center}
+    \begin{tabular}{ |c|c|c|c|c|c| } 
+    \hline
+    Repetitions	& Copy & Left & Right & Drop \\
+    \hline
+    2 & 0.4419 us & 0.7791 us & 0.7384 us & 0.2061 us \\
+    \hline
+    4 & 0.8264 us & 1.9235 us & 1.8607 us & 0.3844 us \\
+    \hline
+    8 & 1.7557 us & 5.3294 us & 5.1021 us & 0.9550 us \\
+    \hline
+    16 & 3.7157 us & 18.537 us & 18.414 us & 2.4040 us \\
+    \hline
+    32 & 9.0936 us & 63.749 us & 71.145 us & 6.4837 us \\
+    \hline
+    64 & 23.417 us & 238.53 us & 260.82 us & 17.955 us \\
+    \hline
+    128 & 65.677 us & 880.67 us & 939.85 us & 54.382 us \\
+    \hline
+    \end{tabular}
+    \end{center}
+    \caption{Time taken for repeated operator evaluation.}
+
+    \begin{center}
+    \begin{tabular}{ |c|c|c|c|c|c| } 
+    \hline
+    Repetitions	& Copy & Left & Right & Drop \\
+    \hline
+    2 & 1.0827 us & 1.0302 us & 1.0807 us & 0.4705 us \\
+    \hline
+    4 & 1.4615 us & 1.6106 us & 1.5678 us & 0.5493 us \\
+    \hline
+    8 & 2.2003 us & 2.7681 us & 2.4266 us & 0.7250 us \\
+    \hline
+    16 & 3.8366 us & 5.0191 us & 4.3835 us & 1.1549 us \\
+    \hline
+    32 & 8.0420 us & 9.5310 us & 9.7107 us & 2.6130 us \\
+    \hline
+    64 & 14.749 us & 17.855 us & 17.940 us & 5.1694 us \\
+    \hline
+    128 & 30.267 us & 34.555 us & 34.524 us & 9.6662 us \\
+    \hline
+    \end{tabular}
+    \end{center}
+    \caption{Time taken for repeated symbolic operator evaluation.}
+    \label{fig:repeated_operator_results}
+\end{figure}

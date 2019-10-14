@@ -1,0 +1,55 @@
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth - 100pt]{04_results/images/basic_operator_results_2}
+
+    \begin{center}
+    \begin{tabular}{ |c|c|c|c|c|c| } 
+    \hline
+    Abstraction Length & Copy & Apply & Left & Right & Drop \\
+    \hline
+    1 & 169.48 ns& 111.97 ns & 227.83 ns & 219.19 ns & 84.786 ns \\
+    \hline
+    2 & 173.73 ns& 118.98 ns & 255.91 ns & 251.56 ns & 85.886 ns \\
+    \hline
+    4 & 189.41 ns& 213.45 ns & 303.67 ns & 255.97 ns & 89.071 ns \\
+    \hline
+    8 & 217.64 ns& 247.26 ns & 309.54 ns & 303.68 ns & 97.224 ns \\
+    \hline
+    16 & 262.71 ns& 325.29 ns & 424.90 ns & 381.71 ns & 117.02 ns \\
+    \hline
+    32 & 356.94 ns& 500.84 ns & 566.31 ns & 540.59 ns & 153.60 ns \\
+    \hline
+    64 & 673.85 ns& 829.02 ns & 898.72 ns & 879.33 ns & 254.49 ns \\
+    \hline
+    128 & 952.81 ns& 1416.8 ns & 1749.8 ns & 1612.3 ns & 351.46 ns \\
+    \hline
+    \end{tabular}
+    \end{center}
+    \caption{Time taken for operator evaluation with varying abstraction lengths.}
+
+    \begin{center}
+    \begin{tabular}{ |c|c|c|c|c|c| } 
+    \hline
+    Abstraction Length & Copy & Apply & Left & Right & Drop \\
+    \hline
+    1 & 698.05 ns & 439.56 ns & 715.05 ns & 719.63 ns & 284.33 ns \\
+    \hline
+    2 & 736.09 ns & 429.20 ns & 735.88 ns & 734.22 ns & 292.42 ns \\
+    \hline
+    4 & 709.83 ns & 550.59 ns & 741.79 ns & 725.09 ns & 311.68 ns \\
+    \hline
+    8 & 755.02 ns & 621.54 ns & 756.69 ns & 761.26 ns & 348.12 ns \\
+    \hline
+    16 & 842.81 ns & 771.26 ns & 839.91 ns & 847.95 ns & 453.46 ns \\
+    \hline
+    32 & 1064.7 ns & 1097.1 ns & 1056.8 ns & 1049.4 ns & 669.16 ns \\
+    \hline
+    64 & 1872.2 ns & 1961.9 ns & 1997.4 ns & 2049.2 ns & 1151.3 ns \\
+    \hline
+    128 & 2549.2 ns & 3147.3 ns & 2792.4 ns & 2800.8 ns & 1774.9 ns \\
+    \hline
+    \end{tabular}
+    \end{center}
+    \caption{Time taken for symbolic operator evaluation with varying abstraction lengths.}
+    \label{fig:basic_operator_results}
+\end{figure}

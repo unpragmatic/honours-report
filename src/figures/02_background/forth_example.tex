@@ -1,9 +1,9 @@
-\begin{figure}[htb]
+\begin{figure}[!htb]
     \centering
     \begin{lstlisting}
-: STACK-EMPTY DEPTH 1 = ;
+: ONE-VALUE-REMAINING DEPTH 1 = ;
 
-: SUM BEGIN + STACK-EMPTY UNTIL ;
+: SUM BEGIN + ONE-VALUE-REMAINING UNTIL ;
 \end{lstlisting}
     \caption{A forth program that sums all the elements on the stack}
     \label{fig:forth_example}

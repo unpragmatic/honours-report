@@ -100,3 +100,54 @@ Kihi is a language
 
 The roots of Kihi lie in concatenative, compositional, and functional programming --- paradigms that are not commonly associated with mainstream languages let alone in conjunction. It is worthwhile to understand these various programming paradigms in order to understand why Kihi exists and encourage an appreciation of the technical challenges of the project. The goal of this chapter is to provide the background necessary for an undergraduate software engineering student
 to understand the rest of this report. This starts with an introduction to the aforementioned programming paradigms, before delving into the details of Kihi itself.
+
+
+
+\todo[inline]{Address the addition of side-effectful operators}.
+
+
+\todo[inline]{Penalty of seek, and penalty of insertion into the program}
+\todo[inline]{Discuss partial evalation}.
+This style of execution requires no auxilary data structures, instead intermediate values are stored directly in the program
+\todo[inline]{
+The most fundamental difference these methods of execution is
+revealed when term rewriting is broken down into two fundamental steps.
+
+1. Seek
+    - Find the term to execute
+2. Execution
+    - Execute that term
+
+In contrast, stack based methods do not involve a seek phase. This
+can significantly improve performance, but also shows that stack
+based systems are a subset of term rewriting based systems. In fact,
+a term rewriting based system seeking from right to left is usually 
+equivilent to a stack based system when the program. The edgecase
+being when the program being executed contains barriers. In this case,
+term rewriting based systems are able to find executable portions
+beyond the barrier.
+
+A term rewriting based virtual machine will be able to execute
+all programs a stack based machine is able to. The proof of this
+is relatively simple. One can imagine a term rewriting machine 
+that searches for reducible terms right to left as equivilent to
+a stack machine for terminating programs.
+
+
+
+A program representing an infinite data structure, such as the count
+program which outputs a continous stream of numbers, cannot be
+processed through a normal stack based approach. There may be alterations
+to the stack based approach which may allow values to be pushed 
+through to the left hand side of the program.
+
+
+an abstraction is
+encountered it is pushed onto the stack and when a term (reword)
+is found the arguments are popped off the stack and the 
+result, if it is an abstraction, is pushed onto the stack.
+
+% The key difference between these methods of execution is
+% revealed when term rewriting is broken down into its two fundamental steps. Namely, first finding an executable term, and secondly executing it. The stack based style can be viewed as a simplification of term rewriting where the first step is irrelevant.
+
+% In fact, term rewriting can very easily simulate a stack machine by storing the stack within the program.

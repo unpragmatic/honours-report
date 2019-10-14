@@ -10,6 +10,12 @@
 \usepackage{url} % for typesetting urls
 
 % Personal Packages
+\usepackage[utf8]{inputenc}
+\DeclareUnicodeCharacter{2190}{$\leftarrow$}
+\DeclareUnicodeCharacter{2192}{$\rightarrow$}
+\DeclareUnicodeCharacter{00B7}{$\cdot$}
+\DeclareUnicodeCharacter{00D7}{$\times$}
+\DeclareUnicodeCharacter{2193}{$\downarrow$}
 \usepackage{semantic} % Dunno what for? I think inference rules
 \usepackage{amssymb}
 \usepackage{bcprules}
@@ -23,7 +29,7 @@
 \input{misc/misc}
 \usepackage[framemethod=TikZ]{mdframed}
 
-\graphicspath{ {./figures/04_results/images/} }
+\graphicspath{ {./figures/} }
 
 %
 %  We don't want figures to float so we define
@@ -88,7 +94,7 @@
 \include{02_background}
 \include{03_implementation}
 \include{04_results}
-% \include{05_evaluation}
+\include{05_evaluation}
 \include{06_conclusion}
 
 

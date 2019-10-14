@@ -1,3 +1,6 @@
-\chapter{Evaluation} \label{C:evaluation} 
+\chapter{Future and Related Work} \label{C:work} 
+This chapter aims to provide a purvey of the related langauges not already discussed.
 
-\todo[inline]{Evaluation and results merged}
+\section{Related Languages}
+Like Kihi, Factor is also a concatenative, compositional language that features an optimising compiler \ref{pestov2010factor}. However, Factor is a much higher level language that provides abstractions and operators that have been investigated by a great deal of optimisation literature. For instance, method inlining, overflow check elimination, and escape analysis. These optimisation methods cannot be readily applied to Kihi because of the minimal nature of the language, but perhaps alternative representations of Kihi could utilise these higher abstractions and allow for such optimisations to be used.
+
